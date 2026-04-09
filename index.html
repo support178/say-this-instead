@@ -363,7 +363,7 @@ let state = {
 // To add a new scenario: edit scripts.json and redeploy.
 async function loadScripts() {
   try {
-    const res = await fetch('/scripts.json');
+    const res = await fetch('./scripts.json');
     scenarios = await res.json();
   } catch(e) {
     // Fallback: inline sample so the app works standalone for preview
