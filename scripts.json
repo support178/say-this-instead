@@ -36,7 +36,7 @@
       "Block or gently hold thier hands",
       "Stay calm and firm",
       "Keep your body between them and others",
-      "Reconnect warmly once they're calm",
+      "Reconnect warmly once they're calm"
     ],
     "avoid": [
       "Yelling or hitting back",
@@ -44,8 +44,10 @@
       "Ignoring it completely"
     ],
     "resist": “Hands are not for hitting. If you’re angry, you can stomp your feet or say ‘I’m mad’.”,
-    "resist_note": Stay close, speak quietly, keep your body relaxed,
-    "tip_headline": Stay physically calm and neutral—your reaction teaches what’s acceptable.
+    "resist_note": "Stay close, speak quietly, keep your body relaxed",
+    "tip_headline": "Stay physically calm and neutral—your reaction teaches what’s acceptable".
+    "tip_instead_of": ["Trying to talk them through it in the moment"],
+"tip_try": ["Focus on stopping the behaviour first, then talk once they’re calm"]
   },
   {
     "id": "bedtime",
