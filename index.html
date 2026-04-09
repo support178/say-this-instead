@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#FFF8F3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Say This Instead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FFF8F3;
+  --warm: #F5EDE3;
+  --clay: #C4845A;
+  --clay-light: #F0D5C0;
+  --clay-dark: #8B5A3A;
+  --clay-bg: #FFF4ED;
+  --sage: #6A9178;
+  --sage-light: #D4E8DA;
+  --sage-dark: #3D6B4F;
+  --amber: #E8A020;
+  --amber-light: #FEF3DC;
+  --ink: #2C2417;
+  --ink-soft: #6B5C4A;
+  --ink-muted: #9B8E82;
+  --border: rgba(44,36,23,0.09);
+  --border-med: rgba(44,36,23,0.15);
+  --r: 16px;
+  --r-sm: 10px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html { height: 100%; }
+body { min-height: 100%; background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--ink); overscroll-behavior-y: none; }
+
+.screen { display: none; min-height: 100dvh; flex-direction: column; }
+.screen.active { display: flex; }
+
+/* ── HOME ── */
+.home-top { padding: 56px 22px 18px; }
+.home-top h1 { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 600; line-height: 1.05; color: var(--ink); }
+.home-top h1 em { font-style: italic; color: var(--clay); }
+.home-top p { margin-top: 8px; font-size: 15px; color: var(--ink-soft); line-height: 1.5; }
+
+.search-wrap { padding: 0 22px 16px; }
+.search-input { width: 100%; padding: 11px 16px; border-radius: 12px; border: 1.5px solid var(--border-med); background: white; font-size: 15px; font-family: 'DM Sans', sans-serif; color: var(--ink); outline: none; }
+.search-input::placeholder { color: var(--ink-muted); }
+.search-input:focus { border-color: var(--clay); }
+
+.section-label { padding: 2px 22px 10px; font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-muted); }
+
+.cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 22px 16px; }
+.card { background: var(--warm); border-radius: var(--r); padding: 18px 15px 16px; cursor: pointer; border: 1.5px solid transparent; transition: transform .12s, border-color .12s; position: relative; overflow: hidden; }
+.card:active { transform: scale(.96); }
+.card.free-card { background: white; border-color: var(--sage-light); }
+.card .card-icon { font-size: 28px; margin-bottom: 9px; display: block; line-height: 1; }
+.card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+.card p { font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; line-height: 1.35; }
+.free-pill { position: absolute; top: 10px; right: 10px; background: var(--sage-light); color: var(--sage-dark); font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; }
+.lock-icon { position: absolute; top: 11px; right: 11px; width: 20px; height: 20px; background: var(--clay-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+.upgrade-strip { margin: 4px 22px 32px; background: var(--clay); border-radius: var(--r); padding: 20px 22px; cursor: pointer; }
+.upgrade-strip:active { opacity: .88; }
+.upgrade-strip h3 { font-family: 'Fraunces', serif; color: white; font-size: 19px; font-weight: 600; }
+.upgrade-strip p { color: rgba(255,255,255,.78); font-size: 13px; margin-top: 3px; }
+.upgrade-strip .go { margin-top: 14px; background: white; color: var(--clay-dark); font-size: 14px; font-weight: 500; padding: 9px 18px; border-radius: 9px; display: inline-block; }
+
+/* ── SCRIPT PAGE ── */
+#script-screen { background: var(--cream); overflow-y: auto; }
+.script-nav { display: flex; align-items: center; gap: 12px; padding: 52px 20px 12px; position: sticky; top: 0; background: var(--cream); z-index: 10; }
+.back-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--warm); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+.script-header { padding: 4px 20px 20px; }
+.script-header h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; line-height: 1.1; color: var(--ink); }
+.script-header p { font-size: 14px; color: var(--ink-soft); margin-top: 6px; line-height: 1.5; font-style: italic; }
+
+.script-content { padding: 0 20px 110px; display: flex; flex-direction: column; gap: 12px; }
+
+/* Section blocks */
+.block { border-radius: var(--r); padding: 20px; }
+.block-label { font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+
+.block-script { background: white; border: 1.5px solid var(--clay-light); }
+.block-script .block-label { color: var(--clay); }
+.block-script .quote { font-family: 'Fraunces', serif; font-size: 21px; font-style: italic; font-weight: 400; line-height: 1.45; color: var(--ink); }
+
+.block-steps { background: var(--warm); }
+.block-steps .block-label { color: var(--ink-soft); }
+.step-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 13px; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--clay); color: white; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.step-text { font-size: 15px; color: var(--ink); line-height: 1.5; }
+
+.block-avoid { background: #FFF7F0; border: 1.5px solid var(--clay-light); }
+.block-avoid .block-label { color: var(--clay-dark); }
+.avoid-row { display: flex; gap: 9px; align-items: flex-start; margin-bottom: 10px; font-size: 14px; color: var(--ink); line-height: 1.45; }
+.avoid-row:last-child { margin-bottom: 0; }
+.avoid-x { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+.block-resist { background: var(--warm); border-left: 3px solid var(--clay); border-radius: 0 var(--r) var(--r) 0; }
+.block-resist .block-label { color: var(--clay-dark); }
+.resist-quote { font-family: 'Fraunces', serif; font-size: 17px; font-style: italic; color: var(--ink); line-height: 1.45; margin-bottom: 10px; }
+.resist-note { font-size: 13px; color: var(--ink-soft); display: flex; gap: 6px; align-items: flex-start; }
+
+.block-tip { background: var(--amber-light); border: 1.5px solid rgba(232,160,32,.25); }
+.block-tip .block-label { color: var(--amber); }
+.tip-headline { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 14px; }
+.tip-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tip-col-label { font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px; }
+.tip-item { font-size: 13px; color: var(--ink); line-height: 1.4; padding: 8px 10px; border-radius: 8px; margin-bottom: 6px; }
+.tip-item:last-child { margin-bottom: 0; }
+.tip-no { background: rgba(196,132,90,.1); }
+.tip-yes { background: rgba(106,145,120,.15); }
+
+.script-actions { display: flex; gap: 10px; margin-top: 4px; }
+.act-btn { flex: 1; padding: 14px; border-radius: var(--r-sm); border: 1.5px solid var(--border-med); background: white; font-size: 14px; font-weight: 500; cursor: pointer; color: var(--ink); font-family: 'DM Sans', sans-serif; transition: all .12s; }
+.act-btn:active { transform: scale(.97); }
+.act-btn.primary { background: var(--clay); border-color: var(--clay); color: white; }
+
+/* ── PAYWALL ── */
+#paywall { background: var(--cream); overflow-y: auto; align-items: center; }
+.pw-inner { max-width: 420px; width: 100%; padding: 56px 26px 48px; margin: 0 auto; }
+.pw-icon { font-size: 52px; text-align: center; margin-bottom: 18px; }
+.pw-inner h2 { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 600; text-align: center; line-height: 1.15; }
+.pw-inner h2 em { font-style: italic; color: var(--clay); }
+.pw-inner > p { text-align: center; font-size: 15px; color: var(--ink-soft); margin: 10px 0 26px; line-height: 1.5; }
+.plan { background: white; border: 1.5px solid var(--border-med); border-radius: var(--r); padding: 18px; margin-bottom: 10px; cursor: pointer; transition: border-color .15s, background .15s; }
+.plan.sel { border-color: var(--clay); background: var(--clay-bg); }
+.plan-top { display: flex; justify-content: space-between; align-items: center; }
+.plan-name { font-weight: 500; font-size: 15px; }
+.plan-price { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: var(--clay); }
+.plan-price span { font-size: 14px; font-weight: 400; color: var(--ink-muted); }
+.plan-detail { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+.best-tag { background: var(--clay); color: white; font-size: 10px; font-weight: 500; padding: 3px 9px; border-radius: 20px; }
+.perks { margin: 22px 0; display: flex; flex-direction: column; gap: 11px; }
+.perk { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink); line-height: 1.4; }
+.perk-tick { width: 20px; height: 20px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.sub-btn { width: 100%; padding: 16px; background: var(--clay); color: white; border: none; border-radius: var(--r-sm); font-size: 16px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.sub-btn:active { opacity: .85; }
+.pw-footer { text-align: center; font-size: 12px; color: var(--ink-muted); margin-top: 12px; }
+.pw-back { background: none; border: none; color: var(--ink-soft); font-size: 14px; cursor: pointer; margin-top: 10px; display: block; width: 100%; text-align: center; text-decoration: underline; font-family: 'DM Sans', sans-serif; padding: 4px; }
+
+/* ── SUCCESS ── */
+#success { background: var(--clay); align-items: center; justify-content: center; padding: 40px 28px; text-align: center; }
+#success .s-icon { font-size: 64px; margin-bottom: 20px; }
+#success h2 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; color: white; margin-bottom: 12px; }
+#success p { color: rgba(255,255,255,.82); font-size: 16px; line-height: 1.55; margin-bottom: 36px; max-width: 280px; }
+.done-btn { background: white; color: var(--clay-dark); border: none; padding: 16px 44px; border-radius: var(--r-sm); font-size: 16px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+/* ── SAVED ── */
+#saved-screen { background: var(--cream); }
+.saved-header { padding: 56px 22px 16px; font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; }
+.saved-list { padding: 0 22px 100px; }
+.saved-item { background: var(--warm); border-radius: var(--r-sm); padding: 16px; margin-bottom: 10px; cursor: pointer; display: flex; align-items: center; gap: 14px; }
+.saved-item:active { transform: scale(.97); }
+.saved-icon { font-size: 26px; flex-shrink: 0; }
+.saved-item h4 { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; }
+.saved-item p { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.saved-empty { padding: 80px 28px; text-align: center; }
+.saved-empty h3 { font-family: 'Fraunces', serif; font-size: 22px; margin-bottom: 8px; }
+.saved-empty p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+/* ── ACCOUNT ── */
+#account-screen { background: var(--cream); padding: 56px 22px 100px; }
+#account-screen h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; margin-bottom: 28px; }
+.setting { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.setting:last-child { border-bottom: none; }
+.setting-title { font-size: 15px; font-weight: 500; }
+.setting-sub { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.pill { padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; background: var(--sage-light); color: var(--sage-dark); }
+.pill.premium { background: var(--clay-light); color: var(--clay-dark); }
+.toggle { width: 44px; height: 26px; background: var(--border-med); border-radius: 13px; position: relative; cursor: pointer; transition: background .2s; flex-shrink: 0; }
+.toggle.on { background: var(--clay); }
+.toggle-thumb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: white; border-radius: 50%; transition: transform .2s; box-shadow: 0 1px 4px rgba(0,0,0,.18); }
+.toggle.on .toggle-thumb { transform: translateX(18px); }
+
+/* ── BOTTOM NAV ── */
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 8px 0 20px; z-index: 100; }
+.nav-item { display: flex; flex-direction: column; align-items: center; gap: 3px; cursor: pointer; padding: 4px 22px; color: var(--ink-muted); font-size: 10px; font-weight: 500; transition: color .12s; }
+.nav-item.active { color: var(--clay); }
+.nav-item svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── TOAST ── */
+.toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ink); color: white; padding: 11px 22px; border-radius: 20px; font-size: 14px; z-index: 999; transition: all .25s; pointer-events: none; white-space: nowrap; opacity: 0; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ── LOADING ── */
+.loading { display: flex; align-items: center; justify-content: center; height: 200px; color: var(--ink-muted); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+  <div class="home-top">
+    <h1>Say <em>This</em><br>Instead</h1>
+    <p>Calm scripts for real toddler moments. Tap a situation, get the words.</p>
+  </div>
+  <div class="search-wrap">
+    <input class="search-input" type="search" placeholder="Search situations..." oninput="filterCards(this.value)" autocomplete="off">
+  </div>
+  <div class="section-label">Free to try</div>
+  <div class="cards-grid" id="free-grid"><div class="loading">Loading...</div></div>
+  <div class="section-label" id="paid-label">Full library</div>
+  <div class="cards-grid" id="paid-grid"></div>
+  <div class="upgrade-strip" id="upgrade-strip" onclick="showPaywall()">
+    <h3>Unlock all scripts</h3>
+    <p>Save favourites &amp; get new scripts every month</p>
+    <div class="go">See plans →</div>
+  </div>
+  <div style="height:80px;"></div>
+</div>
+
+<!-- SCRIPT SCREEN -->
+<div id="script-screen" class="screen">
+  <div class="script-nav">
+    <button class="back-btn" onclick="goHome()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"><polyline points="10,3 5,8 10,13"/></svg>
+    </button>
+  </div>
+  <div class="script-header">
+    <h2 id="s-title"></h2>
+    <p id="s-subtext"></p>
+  </div>
+  <div class="script-content">
+    <div class="block block-script">
+      <div class="block-label">🗣 Primary script</div>
+      <div class="quote" id="s-script"></div>
+    </div>
+    <div class="block block-steps">
+      <div class="block-label">⏱ What to do</div>
+      <div id="s-steps"></div>
+    </div>
+    <div class="block block-avoid">
+      <div class="block-label">⚠️ Avoid</div>
+      <div id="s-avoid"></div>
+    </div>
+    <div class="block block-resist">
+      <div class="block-label">🔁 If they resist</div>
+      <div class="resist-quote" id="s-resist"></div>
+      <div class="resist-note"><span>→</span><span id="s-resist-note"></span></div>
+    </div>
+    <div class="block block-tip">
+      <div class="block-label">💡 Pro tip</div>
+      <div class="tip-headline" id="s-tip-headline"></div>
+      <div class="tip-cols">
+        <div>
+          <div class="tip-col-label">Instead of</div>
+          <div id="s-tip-no"></div>
+        </div>
+        <div>
+          <div class="tip-col-label">Try</div>
+          <div id="s-tip-yes"></div>
+        </div>
+      </div>
+    </div>
+    <div class="script-actions">
+      <button class="act-btn" id="save-btn" onclick="toggleSave()">Save</button>
+      <button class="act-btn primary" onclick="copyScript()">Copy script</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAYWALL -->
+<div id="paywall" class="screen">
+  <div class="pw-inner">
+    <div class="pw-icon">✨</div>
+    <h2>Words when you need them <em>most</em></h2>
+    <p>Unlock all scenarios, save your favourites, and get new scripts added monthly.</p>
+    <div class="plan sel" onclick="selectPlan(this,'monthly')">
+      <div class="plan-top">
+        <span class="plan-name">Monthly</span>
+        <span class="plan-price">$4.99<span>/mo</span></span>
+      </div>
+      <div class="plan-detail">Cancel any time · Full library access</div>
+    </div>
+    <div class="plan" onclick="selectPlan(this,'annual')">
+      <div class="plan-top">
+        <span class="plan-name">Annual</span>
+        <span style="display:flex;align-items:center;gap:8px"><span class="best-tag">Best value</span><span class="plan-price">$3.33<span>/mo</span></span></span>
+      </div>
+      <div class="plan-detail">$39.99/year · Save 33%</div>
+    </div>
+    <div class="perks">
+      <div class="perk"><div class="perk-tick"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,5 4,8 8,2"/></svg></div>All scenarios — unlocked instantly</div>
+      <div class="perk"><div class="perk-tick"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,5 4,8 8,2"/></svg></div>Save favourites for quick access</div>
+      <div class="perk"><div class="perk-tick"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,5 4,8 8,2"/></svg></div>Works offline — no internet needed</div>
+      <div class="perk"><div class="perk-tick"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,5 4,8 8,2"/></svg></div>New scripts added every month</div>
+    </div>
+    <button class="sub-btn" onclick="subscribe()">Start free 7-day trial</button>
+    <div class="pw-footer" id="pw-footer">Then $4.99/month. Cancel any time.</div>
+    <button class="pw-back" onclick="goHome()">Maybe later</button>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div id="success" class="screen">
+  <div class="s-icon">🌿</div>
+  <h2>You're all set.</h2>
+  <p>Full access unlocked. You've got the words — now breathe, and go get 'em.</p>
+  <button class="done-btn" onclick="successDone()">Start using it</button>
+</div>
+
+<!-- SAVED -->
+<div id="saved-screen" class="screen">
+  <div class="saved-header">Saved scripts</div>
+  <div class="saved-list" id="saved-list"></div>
+  <div class="saved-empty" id="saved-empty" style="display:none;">
+    <h3>Nothing saved yet</h3>
+    <p>Tap Save on any script to keep it here for quick access during tough moments.</p>
+  </div>
+  <div style="height:80px;"></div>
+</div>
+
+<!-- ACCOUNT -->
+<div id="account-screen" class="screen">
+  <h2>Account</h2>
+  <div class="setting">
+    <div><div class="setting-title">Plan</div><div class="setting-sub">Current subscription</div></div>
+    <div class="pill" id="plan-pill">Free</div>
+  </div>
+  <div class="setting">
+    <div><div class="setting-title">Haptic feedback</div><div class="setting-sub">Vibrate on tap</div></div>
+    <div class="toggle" onclick="this.classList.toggle('on')"><div class="toggle-thumb"></div></div>
+  </div>
+  <div class="setting" style="cursor:pointer;" onclick="showPaywall()">
+    <div><div class="setting-title">Upgrade plan</div><div class="setting-sub">Unlock all scripts</div></div>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--ink-muted)" stroke-width="2" stroke-linecap="round"><polyline points="6,3 10,8 6,13"/></svg>
+  </div>
+  <div style="height:80px;"></div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" id="bottom-nav">
+  <div class="nav-item active" onclick="showTab('home',this)">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+    Home
+  </div>
+  <div class="nav-item" onclick="showTab('saved-screen',this)">
+    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    Saved
+  </div>
+  <div class="nav-item" onclick="showTab('account-screen',this)">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    Account
+  </div>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let scenarios = [];
+let state = {
+  isPremium: !!localStorage.getItem('sti_premium'),
+  savedIds: JSON.parse(localStorage.getItem('sti_saved') || '[]'),
+  current: null,
+  selectedPlan: 'monthly'
+};
+
+// ── LOAD SCRIPTS ──
+// Loads from scripts.json sitting alongside this HTML file.
+// To add a new scenario: edit scripts.json and redeploy.
+async function loadScripts() {
+  try {
+    const res = await fetch('/scripts.json');
+    scenarios = await res.json();
+  } catch(e) {
+    // Fallback: inline sample so the app works standalone for preview
+    scenarios = [
+      {
+        id:'getting-dressed', icon:'👕', free:true,
+        title:'Getting Dressed',
+        subtext:'For when your toddler refuses clothes, runs away, or melts down',
+        script:"I can see you don't want to get dressed. It's time to get ready now. Do you want to put on your shirt first or your pants first?",
+        steps:['Get down to their level (eye contact)','Say the script calmly, once','Offer a simple choice (shirt or pants first)','Pause and wait — don\'t repeat','Gently guide if they don\'t choose'],
+        avoid:['Arguing or explaining too much','Repeating the request over and over','Giving big open-ended choices ("What do you want to wear?")','Giving in after saying no'],
+        resist:"I won't let you stay in pyjamas. I'm going to help your body get dressed.",
+        resist_note:'Calmly guide them into the first step (e.g. shirt)',
+        tip_headline:'Smaller choices = less resistance',
+        tip_instead_of:['What do you want to wear?'],
+        tip_try:['Blue shirt or red shirt?','Socks first or shoes first?']
+      },
+      {
+        id:'hitting', icon:'✊', free:true,
+        title:'Hitting & Biting',
+        subtext:'For when they strike out at you, a sibling, or another child',
+        script:"Ouch. Hitting hurts. I won't let you hurt me. When you're ready, I'm right here.",
+        steps:['Stay calm — your calm is the co-regulation they need','Name what happened simply and without anger','Move away briefly so hitting doesn\'t get a reaction','Reconnect warmly once they\'re calm','Don\'t lecture — keep it short and move on'],
+        avoid:['Hitting back to "show them how it feels"','Long explanations in the heat of the moment','Shaming them in front of others','Ignoring it completely'],
+        resist:"Your body needs to be safe. I'm going to hold your hands gently until we're calm.",
+        resist_note:'Stay close, speak quietly, keep your body relaxed',
+        tip_headline:'Reaction = reward',
+        tip_instead_of:['Stop it! That is NOT okay! Why would you do that?'],
+        tip_try:['Ouch. I won\'t let you do that. (then silence and distance)']
+      },
+      {
+        id:'tantrums', icon:'🌪️', free:false,
+        title:'Full Tantrum',
+        subtext:'For when they\'re completely overwhelmed and past the point of reason',
+        script:"You're really upset right now. I'm right here. You're safe.",
+        steps:['Stop talking — your words won\'t land right now','Get physically close without crowding them','Keep your face calm and your body relaxed','Wait for the peak to pass before saying anything','Reconnect with warmth before any discussion'],
+        avoid:['Trying to reason or explain mid-tantrum','Raising your voice to be heard over theirs','Threatening consequences in the moment','Leaving them completely alone if very young'],
+        resist:"I'm staying right here. I'm not going anywhere. This will pass.",
+        resist_note:'Repeat quietly if needed — you are the anchor, not the audience',
+        tip_headline:'Their brain is offline — wait for it to come back',
+        tip_instead_of:['Stop it right now!','You\'re being ridiculous!'],
+        tip_try:['(silence + presence) — then "You okay now? Want a hug?"']
+      }
+    ];
+  }
+  renderHome(scenarios);
+  updatePlanUI();
+}
+
+// ── RENDER HOME ──
+function renderHome(data) {
+  const fg = document.getElementById('free-grid');
+  const pg = document.getElementById('paid-grid');
+  fg.innerHTML = ''; pg.innerHTML = '';
+
+  const free = data.filter(s => s.free);
+  const paid = data.filter(s => !s.free);
+
+  free.forEach(s => fg.appendChild(makeCard(s)));
+  paid.forEach(s => pg.appendChild(makeCard(s)));
+
+  const strip = document.getElementById('upgrade-strip');
+  if(state.isPremium) strip.style.display = 'none';
+  else strip.style.display = 'block';
+}
+
+function makeCard(s) {
+  const canAccess = s.free || state.isPremium;
+  const div = document.createElement('div');
+  div.className = 'card' + (s.free ? ' free-card' : '');
+  div.innerHTML = `
+    <span class="card-icon">${s.icon}</span>
+    <h3>${s.title}</h3>
+    <p>${s.subtext}</p>
+    ${s.free ? '<div class="free-pill">Free</div>' : ''}
+    ${!canAccess ? `<div class="lock-icon"><svg width="11" height="13" viewBox="0 0 11 13" fill="none"><rect x="1.5" y="5.5" width="8" height="7" rx="1" stroke="#8B5A3A" stroke-width="1.2"/><path d="M3.5 5.5V3.5a2 2 0 014 0v2" stroke="#8B5A3A" stroke-width="1.2"/></svg></div>` : ''}
+  `;
+  div.onclick = () => canAccess ? openScript(s) : showPaywall();
+  return div;
+}
+
+// ── OPEN SCRIPT ──
+function openScript(s) {
+  state.current = s;
+  document.getElementById('s-title').textContent = s.title;
+  document.getElementById('s-subtext').textContent = s.subtext;
+  document.getElementById('s-script').textContent = `"${s.script}"`;
+
+  // Steps
+  document.getElementById('s-steps').innerHTML = s.steps.map((t,i) =>
+    `<div class="step-row"><div class="step-num">${i+1}</div><div class="step-text">${t}</div></div>`
+  ).join('');
+
+  // Avoid
+  document.getElementById('s-avoid').innerHTML = s.avoid.map(t =>
+    `<div class="avoid-row"><span class="avoid-x">❌</span><span>${t}</span></div>`
+  ).join('');
+
+  // Resist
+  document.getElementById('s-resist').textContent = `"${s.resist}"`;
+  document.getElementById('s-resist-note').textContent = s.resist_note;
+
+  // Tip
+  document.getElementById('s-tip-headline').textContent = `"${s.tip_headline}"`;
+  document.getElementById('s-tip-no').innerHTML = s.tip_instead_of.map(t =>
+    `<div class="tip-item tip-no">${t}</div>`).join('');
+  document.getElementById('s-tip-yes').innerHTML = s.tip_try.map(t =>
+    `<div class="tip-item tip-yes">${t}</div>`).join('');
+
+  // Save button
+  updateSaveBtn();
+
+  showScreen('script-screen');
+  document.getElementById('bottom-nav').style.display = 'none';
+  document.getElementById('script-screen').scrollTop = 0;
+}
+
+function updateSaveBtn() {
+  const saved = state.savedIds.includes(state.current?.id);
+  document.getElementById('save-btn').textContent = saved ? 'Saved ♥' : 'Save';
+}
+
+function toggleSave() {
+  if(!state.isPremium) { showPaywall(); return; }
+  const id = state.current.id;
+  const idx = state.savedIds.indexOf(id);
+  if(idx > -1) { state.savedIds.splice(idx,1); showToast('Removed'); }
+  else { state.savedIds.push(id); showToast('Saved!'); }
+  localStorage.setItem('sti_saved', JSON.stringify(state.savedIds));
+  updateSaveBtn();
+}
+
+function copyScript() {
+  const text = state.current.script;
+  navigator.clipboard?.writeText(text).then(() => showToast('Copied!'));
+}
+
+// ── SEARCH ──
+function filterCards(q) {
+  const term = q.toLowerCase().trim();
+  if(!term) { renderHome(scenarios); return; }
+  const filtered = scenarios.filter(s =>
+    s.title.toLowerCase().includes(term) ||
+    s.subtext.toLowerCase().includes(term)
+  );
+  renderHome(filtered);
+}
+
+// ── NAV ──
+function goHome() {
+  showScreen('home');
+  document.getElementById('bottom-nav').style.display = 'flex';
+  document.querySelectorAll('.nav-item').forEach((n,i) => n.classList.toggle('active', i===0));
+}
+
+function showTab(id, el) {
+  if(id === 'saved-screen') renderSaved();
+  showScreen(id);
+  document.getElementById('bottom-nav').style.display = 'flex';
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function showPaywall() {
+  showScreen('paywall');
+  document.getElementById('bottom-nav').style.display = 'none';
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ── PAYWALL / SUB ──
+function selectPlan(el, plan) {
+  state.selectedPlan = plan;
+  document.querySelectorAll('.plan').forEach(p => p.classList.remove('sel'));
+  el.classList.add('sel');
+  document.getElementById('pw-footer').textContent = plan === 'annual'
+    ? 'Then $39.99/year. Cancel any time.'
+    : 'Then $4.99/month. Cancel any time.';
+}
+
+function subscribe() {
+  // Wire up Stripe here in production
+  state.isPremium = true;
+  localStorage.setItem('sti_premium', '1');
+  updatePlanUI();
+  renderHome(scenarios);
+  showScreen('success');
+  document.getElementById('bottom-nav').style.display = 'none';
+}
+
+function successDone() { goHome(); }
+
+function updatePlanUI() {
+  const pill = document.getElementById('plan-pill');
+  if(state.isPremium) { pill.textContent='Premium'; pill.classList.add('premium'); }
+  else { pill.textContent='Free'; pill.classList.remove('premium'); }
+}
+
+// ── SAVED ──
+function renderSaved() {
+  const list = document.getElementById('saved-list');
+  const empty = document.getElementById('saved-empty');
+  list.innerHTML = '';
+  if(!state.isPremium || state.savedIds.length === 0) {
+    empty.style.display = 'block';
+    empty.querySelector('p').textContent = state.isPremium
+      ? 'Tap Save on any script to keep it here for quick access during tough moments.'
+      : 'Upgrade to save your favourite scripts for quick access.';
+    return;
+  }
+  empty.style.display = 'none';
+  state.savedIds.forEach(id => {
+    const s = scenarios.find(x => x.id === id);
+    if(!s) return;
+    const el = document.createElement('div');
+    el.className = 'saved-item';
+    el.innerHTML = `<div class="saved-icon">${s.icon}</div><div><h4>${s.title}</h4><p>${s.subtext}</p></div>`;
+    el.onclick = () => openScript(s);
+    list.appendChild(el);
+  });
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+loadScripts();
+</script>
+</body>
+</html>

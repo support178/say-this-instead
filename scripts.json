@@ -1,0 +1,210 @@
+[
+  {
+    "id": "getting-dressed",
+    "icon": "👕",
+    "free": true,
+    "title": "Getting Dressed",
+    "subtext": "For when your toddler refuses clothes, runs away, or melts down",
+    "script": "I can see you don't want to get dressed. It's time to get ready now. Do you want to put on your shirt first or your pants first?",
+    "steps": [
+      "Get down to their level (eye contact)",
+      "Say the script calmly, once",
+      "Offer a simple choice (shirt or pants first)",
+      "Pause and wait — don't repeat",
+      "Gently guide if they don't choose"
+    ],
+    "avoid": [
+      "Arguing or explaining too much",
+      "Repeating the request over and over",
+      "Giving big open-ended choices ("What do you want to wear?")",
+      "Giving in after saying no"
+    ],
+    "resist": "I won't let you stay in pyjamas. I'm going to help your body get dressed.",
+    "resist_note": "Calmly guide them into the first step (e.g. shirt)",
+    "tip_headline": "Smaller choices = less resistance",
+    "tip_instead_of": ["What do you want to wear?"],
+    "tip_try": ["Blue shirt or red shirt?"]
+  },
+  {
+    "id": "hitting",
+    "icon": "✊",
+    "free": true,
+    "title": "Hitting & Biting",
+    "subtext": "For when they strike out at you, a sibling, or another child",
+    "script": "Ouch. Hitting hurts. I won't let you hurt me. When you're ready, I'm right here.",
+    "steps": [
+      "Stay calm — your calm is the co-regulation they need",
+      "Name what happened simply and without anger",
+      "Move away briefly so hitting doesn't get a reaction",
+      "Reconnect warmly once they're calm",
+      "Don't lecture — keep it short and move on"
+    ],
+    "avoid": [
+      "Hitting back to 'show them how it feels'",
+      "Long explanations in the heat of the moment",
+      "Shaming them in front of others",
+      "Ignoring it completely"
+    ],
+    "resist": "Your body needs to be safe. I'm going to hold your hands gently until we're calm.",
+    "resist_note": "Stay close, speak quietly, keep your body relaxed",
+    "tip_headline": "Reaction = reward",
+    "tip_instead_of": ["Stop it! That is NOT okay! Why would you do that?"],
+    "tip_try": ["Ouch. I won't let you do that. (then silence and distance)"]
+  },
+  {
+    "id": "bedtime",
+    "icon": "🌙",
+    "free": false,
+    "title": "Bedtime Refusal",
+    "subtext": "For when they won't go to, or stay in, bed",
+    "script": "It's time for sleep now. Your body needs rest so we can have a great day tomorrow. Do you want one story or two songs tonight?",
+    "steps": [
+      "Give a 5-minute warning before the routine starts",
+      "Follow the exact same routine every night",
+      "Offer a small choice within the routine",
+      "Say goodnight warmly but firmly — then leave",
+      "If they come out, silently return them once"
+    ],
+    "avoid": [
+      "Negotiating past the point of no return",
+      "Checking in repeatedly after lights out",
+      "Screens in the 30 minutes before bed",
+      "Big conversations or discipline at bedtime"
+    ],
+    "resist": "I know you want to stay up. It's still time for sleep. I love you. Goodnight.",
+    "resist_note": "Say it once, calmly, then leave — don't re-enter for requests",
+    "tip_headline": "Routine beats rules every time",
+    "tip_instead_of": ["Just go to sleep!", "I've told you a hundred times!"],
+    "tip_try": ["Same steps, same order, same time — every single night"]
+  },
+  {
+    "id": "tantrums",
+    "icon": "🌪️",
+    "free": false,
+    "title": "Full Tantrum",
+    "subtext": "For when they're completely overwhelmed and past the point of reason",
+    "script": "You're really upset right now. I'm right here. You're safe.",
+    "steps": [
+      "Stop talking — your words won't land right now",
+      "Get physically close without crowding them",
+      "Keep your face calm and your body relaxed",
+      "Wait for the peak to pass before saying anything",
+      "Reconnect with warmth before any discussion"
+    ],
+    "avoid": [
+      "Trying to reason or explain mid-tantrum",
+      "Raising your voice to be heard over theirs",
+      "Threatening consequences in the moment",
+      "Leaving them completely alone if very young"
+    ],
+    "resist": "I'm staying right here. I'm not going anywhere. This will pass.",
+    "resist_note": "Repeat quietly if needed — you are the anchor, not the audience",
+    "tip_headline": "Their brain is offline — wait for it to come back",
+    "tip_instead_of": ["Stop it right now!", "You're being ridiculous!"],
+    "tip_try": ["(silence + presence) — then 'You okay now? Want a hug?'"]
+  },
+  {
+    "id": "leaving",
+    "icon": "🚗",
+    "free": false,
+    "title": "Won't Leave a Place",
+    "subtext": "Playground, party, playdate — they refuse to go when it's time",
+    "script": "We're leaving in two minutes. What's the one last thing you want to do before we go?",
+    "steps": [
+      "Give a 5-minute warning, then a 2-minute warning",
+      "Acknowledge how hard leaving feels — genuinely",
+      "Name something to look forward to next",
+      "Start moving toward the exit yourself",
+      "Follow through — don't extend 'two minutes' indefinitely"
+    ],
+    "avoid": [
+      "Saying 'five more minutes' and then not meaning it",
+      "Bribing with screens or treats every time",
+      "Making leaving feel like a punishment",
+      "Getting into a physical standoff at the gate"
+    ],
+    "resist": "I know you're not ready. We're still going. I'll help your body.",
+    "resist_note": "Announce physical help before you provide it — no surprises",
+    "tip_headline": "Warnings only work if you follow through",
+    "tip_instead_of": ["Okay, five more minutes... okay, just five more..."],
+    "tip_try": ["Two minutes. (set a visible timer on your phone)"]
+  },
+  {
+    "id": "food-refusal",
+    "icon": "🥦",
+    "free": false,
+    "title": "Food Refusal",
+    "subtext": "For when they won't eat, only want one thing, or reject everything on the plate",
+    "script": "You don't have to eat it. It's going to stay on your plate. Let's talk about something fun.",
+    "steps": [
+      "Serve the food without commentary or fanfare",
+      "Eat your own meal and keep conversation light",
+      "Don't offer an alternative meal",
+      "Let them leave the table without drama if they're done",
+      "Try the rejected food again in a few days — no comment"
+    ],
+    "avoid": [
+      "Forcing, bargaining, or bribing with dessert",
+      "Making a separate 'safe' meal every time",
+      "Commenting on how much or little they've eaten",
+      "Showing stress or disappointment at the table"
+    ],
+    "resist": "That's what's for dinner tonight. You don't have to eat it. I love you.",
+    "resist_note": "Then drop it — attention on food refusal makes it worse",
+    "tip_headline": "It takes 20+ exposures before a child accepts a new food",
+    "tip_instead_of": ["Just try it! One bite! You liked it last week!"],
+    "tip_try": ["Serve it alongside something familiar, say nothing, move on"]
+  },
+  {
+    "id": "screen-time",
+    "icon": "📱",
+    "free": false,
+    "title": "Screen Time Ending",
+    "subtext": "For when turning off the TV or tablet triggers a meltdown",
+    "script": "The show is going to finish in two minutes. When it's done, screens are done for now. What do you want to do after?",
+    "steps": [
+      "Give a warning before the end — not during a critical moment",
+      "Use a timer they can see if possible",
+      "Turn it off yourself — don't ask them to do it",
+      "Have the next activity ready to move straight into",
+      "Stay neutral — no guilt, no lectures about screens"
+    ],
+    "avoid": [
+      "Saying 'one more episode' repeatedly",
+      "Turning it off mid-scene with no warning",
+      "Getting into a debate about screen time limits",
+      "Using screens as the only wind-down strategy"
+    ],
+    "resist": "I know you want to keep watching. Screens are done for now. Let's find something else.",
+    "resist_note": "Don't re-open the negotiation — the boundary is the boundary",
+    "tip_headline": "Transition activities beat cold turkey every time",
+    "tip_instead_of": ["Turn it off now! I said NOW!"],
+    "tip_try": ["After this episode we're going to do (specific thing) — ready?"]
+  },
+  {
+    "id": "whining",
+    "icon": "😩",
+    "free": false,
+    "title": "Constant Whining",
+    "subtext": "For when everything comes out as a whine and you can't take it anymore",
+    "script": "I really want to help you. I can't understand you when you talk like that. Can you show me with your normal voice?",
+    "steps": [
+      "Stay calm — frustration on your end fuels the whine",
+      "Name that you want to hear them",
+      "Ask for their 'regular voice' without mocking",
+      "When they switch, respond immediately and warmly",
+      "Check if they're hungry, tired, or overstimulated"
+    ],
+    "avoid": [
+      "Imitating or mocking the whine",
+      "Giving in just to make it stop",
+      "Ignoring them completely when they're clearly trying to communicate",
+      "Making it a big deal or a lecture"
+    ],
+    "resist": "I can hear that something's bothering you. I'm going to wait for your calm voice.",
+    "resist_note": "Then genuinely wait — and respond the moment they shift",
+    "tip_headline": "Whining is usually a signal, not a strategy",
+    "tip_instead_of": ["Stop whining! Use your words!"],
+    "tip_try": ["Are you hungry? Tired? Can you tell me what you need?"]
+  }
+]
