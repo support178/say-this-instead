@@ -31,25 +31,21 @@
     "free": true,
     "title": "Hitting & Biting",
     "subtext": "For when they strike out at you, a sibling, or another child",
-    "script": "Ouch. Hitting hurts. I won't let you hurt me. When you're ready, I'm right here.",
+    "script": "I won’t let you hit. Hitting hurts.",
     "steps": [
-      "Stay calm — your calm is the co-regulation they need",
-      "Name what happened simply and without anger",
-      "Move away briefly so hitting doesn't get a reaction",
+      "Block or gently hold thier hands",
+      "Stay calm and firm",
+      "Keep your body between them and others",
       "Reconnect warmly once they're calm",
-      "Don't lecture — keep it short and move on"
     ],
     "avoid": [
-      "Hitting back to 'show them how it feels'",
+      "Yelling or hitting back",
       "Long explanations in the heat of the moment",
-      "Shaming them in front of others",
       "Ignoring it completely"
     ],
-    "resist": "Your body needs to be safe. I'm going to hold your hands gently until we're calm.",
-    "resist_note": "Stay close, speak quietly, keep your body relaxed",
-    "tip_headline": "Reaction = reward",
-    "tip_instead_of": ["Stop it! That is NOT okay! Why would you do that?"],
-    "tip_try": ["Ouch. I won't let you do that. (then silence and distance)"]
+    "resist": “Hands are not for hitting. If you’re angry, you can stomp your feet or say ‘I’m mad’.”,
+    "resist_note": Stay close, speak quietly, keep your body relaxed,
+    "tip_headline": Stay physically calm and neutral—your reaction teaches what’s acceptable.,
   },
   {
     "id": "bedtime",
