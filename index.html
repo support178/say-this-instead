@@ -504,7 +504,7 @@ function openScript(s) {
   document.getElementById('s-resist-note').textContent = s.resist_note;
 
   // Tip
-  document.getElementById('s-tip-headline').textContent = `"${s.tip_headline}"`;
+  document.getElementById('s-tip-headline').textContent = ${s.tip_headline};
   document.getElementById('s-tip-no').innerHTML = s.tip_instead_of.map(t =>
     `<div class="tip-item tip-no">${t}</div>`).join('');
   document.getElementById('s-tip-yes').innerHTML = s.tip_try.map(t =>
