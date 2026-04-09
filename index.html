@@ -141,6 +141,27 @@ body { min-height: 100%; background: var(--cream); font-family: 'DM Sans', sans-
 .pw-footer { text-align: center; font-size: 12px; color: var(--ink-muted); margin-top: 12px; }
 .pw-back { background: none; border: none; color: var(--ink-soft); font-size: 14px; cursor: pointer; margin-top: 10px; display: block; width: 100%; text-align: center; text-decoration: underline; font-family: 'DM Sans', sans-serif; padding: 4px; }
 
+/* ── ACTIVATE ── */
+#activate { background: var(--cream); align-items: center; overflow-y: auto; }
+.act-inner { max-width: 420px; width: 100%; padding: 56px 26px 48px; margin: 0 auto; }
+.act-inner h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; line-height: 1.15; color: var(--ink); margin-bottom: 8px; }
+.act-inner h2 em { font-style: italic; color: var(--clay); }
+.act-inner > p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 28px; }
+.uuid-field { width: 100%; padding: 14px 16px; border-radius: var(--r-sm); border: 1.5px solid var(--border-med); background: white; font-size: 15px; font-family: 'DM Sans', sans-serif; color: var(--ink); outline: none; letter-spacing: .03em; }
+.uuid-field:focus { border-color: var(--clay); }
+.uuid-field.error { border-color: #C0392B; }
+.uuid-error { font-size: 13px; color: #C0392B; margin-top: 8px; min-height: 18px; }
+.activate-btn { width: 100%; padding: 16px; background: var(--clay); color: white; border: none; border-radius: var(--r-sm); font-size: 16px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; margin-top: 14px; transition: opacity .15s; }
+.activate-btn:active { opacity: .85; }
+.activate-btn:disabled { opacity: .5; cursor: not-allowed; }
+.act-divider { display: flex; align-items: center; gap: 12px; margin: 24px 0; color: var(--ink-muted); font-size: 13px; }
+.act-divider::before, .act-divider::after { content: ''; flex: 1; height: 1px; background: var(--border-med); }
+.stripe-btn { width: 100%; padding: 16px; background: white; color: var(--ink); border: 1.5px solid var(--border-med); border-radius: var(--r-sm); font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: border-color .15s; }
+.stripe-btn:hover { border-color: var(--clay); }
+.stripe-btn:active { opacity: .85; }
+.act-note { font-size: 12px; color: var(--ink-muted); text-align: center; margin-top: 10px; line-height: 1.5; }
+.act-back { background: none; border: none; color: var(--ink-soft); font-size: 14px; cursor: pointer; margin-top: 16px; display: block; width: 100%; text-align: center; text-decoration: underline; font-family: 'DM Sans', sans-serif; padding: 4px; }
+
 /* ── SUCCESS ── */
 #success { background: var(--clay); align-items: center; justify-content: center; padding: 40px 28px; text-align: center; }
 #success .s-icon { font-size: 64px; margin-bottom: 20px; }
@@ -288,9 +309,25 @@ body { min-height: 100%; background: var(--cream); font-family: 'DM Sans', sans-
       <div class="perk"><div class="perk-tick"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,5 4,8 8,2"/></svg></div>Works offline — no internet needed</div>
       <div class="perk"><div class="perk-tick"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,5 4,8 8,2"/></svg></div>New scripts added every month</div>
     </div>
-    <button class="sub-btn" onclick="subscribe()">Start free 7-day trial</button>
-    <div class="pw-footer" id="pw-footer">Then $4.99/month. Cancel any time.</div>
+    <button class="sub-btn" id="stripe-main-btn" onclick="goToStripe()">Subscribe — $4.99/month</button>
+    <div class="pw-footer" id="pw-footer">7-day free trial · Cancel any time</div>
+    <div class="act-divider">already subscribed?</div>
+    <button class="stripe-btn" onclick="showActivate()">Enter my access code</button>
     <button class="pw-back" onclick="goHome()">Maybe later</button>
+  </div>
+</div>
+
+<!-- ACTIVATE -->
+<div id="activate" class="screen">
+  <div class="act-inner">
+    <div style="font-size:40px;margin-bottom:16px;">🔑</div>
+    <h2>Enter your <em>access code</em></h2>
+    <p>After subscribing, we email you a unique access code. Paste it below to unlock the full library on this device.</p>
+    <input class="uuid-field" id="uuid-input" type="text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" oninput="clearUuidError()">
+    <div class="uuid-error" id="uuid-error"></div>
+    <button class="activate-btn" id="activate-btn" onclick="validateUUID()">Unlock access</button>
+    <div class="act-note">Your code was emailed after payment.<br>Can't find it? Check your spam folder.</div>
+    <button class="act-back" onclick="showPaywall()">← Back</button>
   </div>
 </div>
 
@@ -363,7 +400,7 @@ let state = {
 // To add a new scenario: edit scripts.json and redeploy.
 async function loadScripts() {
   try {
-    const res = await fetch('./scripts.json');
+    const res = await fetch('scripts.json');
     scenarios = await res.json();
   } catch(e) {
     // Fallback: inline sample so the app works standalone for preview
@@ -539,23 +576,90 @@ function showScreen(id) {
 }
 
 // ── PAYWALL / SUB ──
+
+// Replace this with your actual Stripe payment links
+const STRIPE_LINKS = {
+  monthly: 'https://buy.stripe.com/YOUR_MONTHLY_LINK',
+  annual:  'https://buy.stripe.com/YOUR_ANNUAL_LINK'
+};
+
+// Replace this with your Make webhook URL
+const MAKE_VALIDATE_WEBHOOK = 'https://hook.eu1.make.com/YOUR_WEBHOOK_ID';
+
 function selectPlan(el, plan) {
   state.selectedPlan = plan;
   document.querySelectorAll('.plan').forEach(p => p.classList.remove('sel'));
   el.classList.add('sel');
-  document.getElementById('pw-footer').textContent = plan === 'annual'
-    ? 'Then $39.99/year. Cancel any time.'
-    : 'Then $4.99/month. Cancel any time.';
+  const btn = document.getElementById('stripe-main-btn');
+  if(plan === 'annual') {
+    btn.textContent = 'Subscribe — $39.99/year';
+    document.getElementById('pw-footer').textContent = '7-day free trial · Save 33% vs monthly';
+  } else {
+    btn.textContent = 'Subscribe — $4.99/month';
+    document.getElementById('pw-footer').textContent = '7-day free trial · Cancel any time';
+  }
 }
 
-function subscribe() {
-  // Wire up Stripe here in production
-  state.isPremium = true;
-  localStorage.setItem('sti_premium', '1');
-  updatePlanUI();
-  renderHome(scenarios);
-  showScreen('success');
+function goToStripe() {
+  window.open(STRIPE_LINKS[state.selectedPlan], '_blank');
+}
+
+function showActivate() {
+  showScreen('activate');
   document.getElementById('bottom-nav').style.display = 'none';
+}
+
+function showPaywall() {
+  showScreen('paywall');
+  document.getElementById('bottom-nav').style.display = 'none';
+}
+
+function clearUuidError() {
+  document.getElementById('uuid-error').textContent = '';
+  document.getElementById('uuid-input').classList.remove('error');
+}
+
+async function validateUUID() {
+  const uuid = document.getElementById('uuid-input').value.trim();
+  const btn = document.getElementById('activate-btn');
+  const errEl = document.getElementById('uuid-error');
+
+  if(!uuid) {
+    errEl.textContent = 'Please paste your access code first.';
+    return;
+  }
+
+  btn.textContent = 'Checking...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(MAKE_VALIDATE_WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ uuid })
+    });
+    const data = await res.json();
+
+    if(data.valid === true) {
+      // Store the UUID so we can re-validate if needed
+      localStorage.setItem('sti_premium', '1');
+      localStorage.setItem('sti_uuid', uuid);
+      state.isPremium = true;
+      updatePlanUI();
+      renderHome(scenarios);
+      showScreen('success');
+      document.getElementById('bottom-nav').style.display = 'none';
+    } else {
+      document.getElementById('uuid-input').classList.add('error');
+      errEl.textContent = data.message || 'Code not recognised. Check your email and try again.';
+      btn.textContent = 'Unlock access';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    errEl.textContent = 'Could not connect to check your code. Check your internet and try again.';
+    btn.textContent = 'Unlock access';
+    btn.disabled = false;
+  }
 }
 
 function successDone() { goHome(); }
