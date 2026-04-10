@@ -19,7 +19,7 @@
       "Giving big open-ended choices ('What do you want to wear?')",
       "Giving in after saying no"
     ],
-    "resist": "I won't let you stay in pyjamas. I'm going to help your body get dressed.",
+    "resist": "I won't let you stay in pyjamas. I'm going to help you get dressed.",
     "resist_note": "Calmly guide them into the first step (e.g. shirt)",
     "tip_headline": "Smaller choices = less resistance",
     "tip_instead_of": ["What do you want to wear?"],
@@ -43,7 +43,7 @@
       "Long explanations in the heat of the moment",
       "Ignoring it completely"
     ],
-    "resist": "Hands are not for . If you're angry, you can stomp your feet or say 'I'm mad'.",
+    "resist": "Hands are not for hitting. If you're angry, you can stomp your feet or say 'I'm mad'.",
     "resist_note": "Stay close, speak quietly, keep your body relaxed",
     "tip_headline": "Stay physically calm and neutral—your reaction teaches what’s acceptable.",
     "tip_instead_of": ["Trying to talk them through it in the moment"],
@@ -55,7 +55,7 @@
   "free": true,
   "title": "Bedtime Refusal",
   "subtext": "For when they won’t settle, keep getting up, or resist going to bed",
-  "script": "It’s bedtime now. You can walk to bed or I can help your body.",
+  "script": "It’s bedtime now. You can walk yourself to bed or I can guide you.",
   "steps": [
     "Keep lights low and voice calm",
     "Say the script once, clearly",
@@ -95,7 +95,7 @@
     "Turning it into a discussion",
     "Showing frustration"
   ],
-  "resist": "We’re leaving now. I’m going to help your body get ready.",
+  "resist": "We’re leaving now. I’m going to help you get ready.",
   "resist_note": "Stay calm and move them gently into action",
   "tip_headline": "Clarity reduces resistance.",
   "tip_instead_of": ["“Come on, we’re going!”"],
@@ -121,7 +121,7 @@
     "Negotiating after saying it’s time",
     "Rushing without connection"
   ],
-  "resist": "I won’t let you stay. I’m going to help your body go now.",
+  "resist": "You can't stay. I’m going to help you go now.",
   "resist_note": "Stay calm and carry them if needed without adding extra words",
   "tip_headline": "Transitions work better with a heads-up.",
   "tip_instead_of": ["Ending play suddenly"],
@@ -131,7 +131,7 @@
   "id": "food",
   "icon": "🍽",
   "free": true,
-  "title": "Won’t Eat Dinner",
+  "title": "Food Refusal",
   "subtext": "For when they refuse food or push meals away",
   "script": "This is dinner. You don’t have to eat, but this is what’s available.",
   "steps": [
@@ -151,7 +151,7 @@
   "resist_note": "Stay neutral and move on without extending the moment",
   "tip_headline": "Less pressure = more willingness over time.",
   "tip_instead_of": ["“Just take one bite”"],
-  "tip_try": ["Stay neutral and let them choose"]
+  "tip_try": ["Stay neutral and let them choose", "Making sure there is something on the plate you know they like"]
 },
 {
   "id": "ignoring",
@@ -159,7 +159,7 @@
   "free": true,
   "title": "Won’t Listen",
   "subtext": "For when they ignore instructions or don’t respond",
-  "script": "I need you to listen. It’s time to (instruction).",
+  "script": "(name), I need you to listen. It’s time to (instruction).",
   "steps": [
     "Get close and at their level",
     "Say their name first",
