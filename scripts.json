@@ -204,5 +204,135 @@
     "tip_headline": "Whining is usually a signal, not a strategy",
     "tip_instead_of": ["Stop whining! Use your words!"],
     "tip_try": ["Are you hungry? Tired? Can you tell me what you need?"]
-  }
+  },
+  {
+  "id": "bedtime",
+  "icon": "😴",
+  "free": true,
+  "title": "Bedtime Refusal",
+  "subtext": "For when they won’t settle, keep getting up, or resist going to bed",
+  "script": "It’s bedtime now. You can walk to bed or I can help your body.",
+  "steps": [
+    "Keep lights low and voice calm",
+    "Say the script once, clearly",
+    "Guide them to bed if needed",
+    "Keep interactions minimal",
+    "Repeat consistently if they get up"
+  ],
+  "avoid": [
+    "Negotiating extra time",
+    "Long conversations or reasoning",
+    "Introducing new activities",
+    "Inconsistent responses"
+  ],
+  "resist": "It’s time to sleep. I’m here. Your body needs rest.",
+  "resist_note": "Stay calm, keep your voice low, and avoid engaging further",
+  "tip_headline": "Boring = effective at bedtime.",
+  "tip_instead_of": ["Talking or engaging when they get up"],
+  "tip_try": ["Keep responses short and repeat the same calm phrase"]
+},
+{
+  "id": "leaving-house",
+  "icon": "🚪",
+  "free": true,
+  "title": "Leaving the House",
+  "subtext": "For when getting out the door turns into a battle",
+  "script": "We’re going now. Shoes on first, then we go outside.",
+  "steps": [
+    "Give a clear, simple sequence",
+    "Say it once, calmly",
+    "Start the first step immediately",
+    "Keep momentum moving",
+    "Guide physically if needed"
+  ],
+  "avoid": [
+    "Giving multiple instructions at once",
+    "Waiting too long after saying it’s time",
+    "Turning it into a discussion",
+    "Showing frustration"
+  ],
+  "resist": "We’re leaving now. I’m going to help your body get ready.",
+  "resist_note": "Stay calm and move them gently into action",
+  "tip_headline": "Clarity reduces resistance.",
+  "tip_instead_of": ["“Come on, we’re going!”"],
+  "tip_try": ["“Shoes on, then outside.”"]
+},
+{
+  "id": "leaving-park",
+  "icon": "🛝",
+  "free": true,
+  "title": "Leaving the Park",
+  "subtext": "For when they don’t want to leave and emotions run high",
+  "script": "I know you want to stay. It’s time to go now. Do you want to walk or be carried?",
+  "steps": [
+    "Acknowledge their feeling",
+    "Give two clear options",
+    "Pause briefly",
+    "Follow through calmly",
+    "Stay consistent"
+  ],
+  "avoid": [
+    "Surprising them with no warning",
+    "Saying “just one more” repeatedly",
+    "Negotiating after saying it’s time",
+    "Rushing without connection"
+  ],
+  "resist": "I won’t let you stay. I’m going to help your body go now.",
+  "resist_note": "Stay calm and carry them if needed without adding extra words",
+  "tip_headline": "Transitions work better with a heads-up.",
+  "tip_instead_of": ["Ending play suddenly"],
+  "tip_try": ["“2 more minutes, then we’re leaving.”"]
+},
+{
+  "id": "food",
+  "icon": "🍽",
+  "free": true,
+  "title": "Won’t Eat Dinner",
+  "subtext": "For when they refuse food or push meals away",
+  "script": "This is dinner. You don’t have to eat, but this is what’s available.",
+  "steps": [
+    "Serve the meal calmly",
+    "Let them decide how much to eat",
+    "Keep the atmosphere neutral",
+    "Avoid pressure or attention on eating",
+    "End the meal without stress"
+  ],
+  "avoid": [
+    "Forcing bites",
+    "Making separate meals immediately",
+    "Turning it into a power struggle",
+    "Praising or pressuring too much"
+  ],
+  "resist": "Dinner is finished. You can eat more next time.",
+  "resist_note": "Stay neutral and move on without extending the moment",
+  "tip_headline": "Less pressure = more willingness over time.",
+  "tip_instead_of": ["“Just take one bite”"],
+  "tip_try": ["Stay neutral and let them choose"]
+},
+{
+  "id": "ignoring",
+  "icon": "🗣",
+  "free": true,
+  "title": "Won’t Listen",
+  "subtext": "For when they ignore instructions or don’t respond",
+  "script": "I need you to listen. It’s time to (instruction).",
+  "steps": [
+    "Get close and at their level",
+    "Say their name first",
+    "Give one clear instruction",
+    "Pause and wait",
+    "Follow through if needed"
+  ],
+  "avoid": [
+    "Calling from across the room",
+    "Repeating instructions multiple times",
+    "Giving multiple steps at once",
+    "Raising your voice"
+  ],
+  "resist": "I’m going to help you now.",
+  "resist_note": "Gently guide them to complete the task",
+  "tip_headline": "Connection improves cooperation.",
+  "tip_instead_of": ["Repeating yourself louder"],
+  "tip_try": ["Get close, say their name, then give the instruction"]
+}
 ]
