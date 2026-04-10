@@ -308,7 +308,7 @@ body { min-height: 100%; background: var(--cream); font-family: 'DM Sans', sans-
     <div class="plan" onclick="selectPlan(this,'annual')">
       <div class="plan-top">
         <span class="plan-name">Annual</span>
-        <span style="display:flex;align-items:center;gap:8px"><span class="best-tag">Best value</span><span class="plan-price">$3.33<span>/mo</span></span></span>
+        <span style="display:flex;align-items:center;gap:8px"><span class="best-tag">Best value</span><span class="plan-price">$2.50<span>/mo</span></span></span>
       </div>
       <div class="plan-detail">$29.99/year · Save 50%</div>
     </div>
@@ -600,8 +600,8 @@ function selectPlan(el, plan) {
   el.classList.add('sel');
   const btn = document.getElementById('stripe-main-btn');
   if(plan === 'annual') {
-    btn.textContent = 'Subscribe — $39.99/year';
-    document.getElementById('pw-footer').textContent = '7-day free trial · Save 33% vs monthly';
+    btn.textContent = 'Subscribe — $29.99/year';
+    document.getElementById('pw-footer').textContent = '7-day free trial · Save 50% vs monthly';
   } else {
     btn.textContent = 'Subscribe — $4.99/month';
     document.getElementById('pw-footer').textContent = '7-day free trial · Cancel any time';
