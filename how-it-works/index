@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works | Say This Instead</title>
+<meta name="description" content="Say This Instead gives parents the exact words to use when toddlers hit, refuse bed, melt down, or won't listen. Calm scripts, simple steps — right when you need them.">
+<link rel="canonical" href="https://say-this-instead.com/how-it-works/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P38JPCX4EF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P38JPCX4EF');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Say This Instead free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7 scenarios are completely free with no account needed. A subscription unlocks all 30+ scripts, saves your favourites for quick access, and includes new scripts added regularly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What age is Say This Instead for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The scripts are written for parents of toddlers aged roughly 1 to 5 years old, though many of the approaches work with older children too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Say This Instead work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Once you have visited the site or installed it as an app, it works fully offline with no internet connection needed. This is by design: you need it in the moment, not when you have good wifi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who wrote the scripts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The scripts are grounded in evidence-based approaches to toddler behaviour, drawing on child development research, attachment theory, and positive discipline principles. They are written to be practical first: real words you can actually say under pressure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install Say This Instead on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On iPhone: open say-this-instead.com in Safari, tap the Share button, then tap Add to Home Screen. On Android: open the site in Chrome, tap the three-dot menu, then tap Add to Home Screen or Install App."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --cream: #FFF8F3;
+  --warm: #F5EDE3;
+  --clay: #C4845A;
+  --clay-light: #F0D5C0;
+  --clay-dark: #8B5A3A;
+  --sage: #6A9178;
+  --sage-light: #D4E8DA;
+  --sage-dark: #3D6B4F;
+  --amber-light: #FEF3DC;
+  --amber: #E8A020;
+  --ink: #2C2417;
+  --ink-soft: #6B5C4A;
+  --ink-muted: #9B8E82;
+  --border: rgba(44,36,23,0.09);
+  --border-med: rgba(44,36,23,0.15);
+  --r: 16px;
+  --r-sm: 10px;
+  --max: 680px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--ink); line-height: 1.6; }
+a { color: var(--clay); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--ink); }
+.nav-logo em { font-style: italic; color: var(--clay); }
+.nav-cta { background: var(--clay); color: white; padding: 9px 18px; border-radius: var(--r-sm); font-size: 14px; font-weight: 500; }
+.nav-cta:hover { text-decoration: none; opacity: .88; }
+.hero { max-width: var(--max); margin: 0 auto; padding: 56px 24px 48px; text-align: center; }
+.eyebrow { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--clay); margin-bottom: 16px; }
+.hero h1 { font-family: 'Fraunces', serif; font-size: clamp(32px, 6vw, 48px); font-weight: 600; line-height: 1.08; color: var(--ink); margin-bottom: 18px; }
+.hero h1 em { font-style: italic; color: var(--clay); }
+.hero p { font-size: 17px; color: var(--ink-soft); line-height: 1.65; max-width: 480px; margin: 0 auto 32px; }
+.hero-btn { display: inline-block; background: var(--clay); color: white; font-size: 16px; font-weight: 500; padding: 15px 32px; border-radius: var(--r-sm); }
+.hero-btn:hover { text-decoration: none; opacity: .88; }
+.hero-note { margin-top: 12px; font-size: 13px; color: var(--ink-muted); }
+.divider { max-width: var(--max); margin: 0 auto 56px; padding: 0 24px; }
+.divider hr { border: none; border-top: 1px solid var(--border); }
+.section { max-width: var(--max); margin: 0 auto; padding: 0 24px 56px; }
+.section .eyebrow { margin-bottom: 10px; }
+.section h2 { font-family: 'Fraunces', serif; font-size: clamp(24px, 4vw, 32px); font-weight: 600; line-height: 1.15; color: var(--ink); margin-bottom: 16px; }
+.section h2 em { font-style: italic; color: var(--clay); }
+.section > p { font-size: 16px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 24px; }
+.how-grid { display: flex; flex-direction: column; gap: 12px; }
+.how-card { background: white; border: 1.5px solid var(--border-med); border-radius: var(--r); padding: 20px; display: flex; gap: 16px; align-items: flex-start; }
+.how-num { width: 36px; height: 36px; border-radius: 50%; background: var(--clay); color: white; font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.how-card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+.how-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+.script-preview { background: white; border: 1.5px solid var(--clay-light); border-radius: var(--r); padding: 22px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 16px; }
+.sp-label { font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--clay); margin-bottom: -8px; }
+.sp-quote { font-family: 'Fraunces', serif; font-size: 20px; font-style: italic; line-height: 1.45; color: var(--ink); }
+.sp-section-label { font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: -8px; }
+.sp-steps { display: flex; flex-direction: column; gap: 10px; }
+.sp-step { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink); line-height: 1.5; }
+.sp-num { width: 22px; height: 22px; border-radius: 50%; background: var(--clay); color: white; font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.sp-avoid { display: flex; flex-direction: column; gap: 8px; }
+.sp-avoid-item { display: flex; gap: 8px; font-size: 14px; color: var(--ink); line-height: 1.45; }
+.sp-resist { font-family: 'Fraunces', serif; font-size: 16px; font-style: italic; color: var(--ink); line-height: 1.45; padding-left: 12px; border-left: 3px solid var(--clay); }
+.sp-resist-note { font-size: 13px; color: var(--ink-soft); padding-left: 12px; }
+.sp-tip { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; color: var(--ink); background: var(--amber-light); padding: 12px 14px; border-radius: var(--r-sm); }
+.scenario-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.s-pill { border-radius: var(--r-sm); padding: 11px 13px; display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ink); background: var(--warm); }
+.s-pill.free { background: white; border: 1.5px solid var(--sage-light); }
+.s-icon { font-size: 17px; flex-shrink: 0; }
+.s-badge { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; margin-left: auto; flex-shrink: 0; }
+.s-badge.free { background: var(--sage-light); color: var(--sage-dark); }
+.s-badge.lock { background: var(--clay-light); color: var(--clay-dark); }
+.install-grid { display: flex; flex-direction: column; gap: 14px; }
+.install-card { background: var(--warm); border-radius: var(--r); padding: 22px; }
+.install-card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 16px; }
+.install-steps { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.install-steps li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--ink); line-height: 1.5; }
+.i-num { width: 24px; height: 24px; border-radius: 50%; background: var(--clay); color: white; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.install-note { margin-top: 16px; font-size: 13px; color: var(--ink-muted); line-height: 1.55; font-style: italic; }
+.faq-item { border-top: 1px solid var(--border); padding: 20px 0; cursor: pointer; }
+.faq-item:last-child { border-bottom: 1px solid var(--border); }
+.faq-q { font-size: 16px; font-weight: 500; color: var(--ink); display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; user-select: none; }
+.faq-chevron { flex-shrink: 0; transition: transform .2s; color: var(--ink-muted); }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-a { font-size: 15px; color: var(--ink-soft); line-height: 1.65; max-height: 0; overflow: hidden; transition: max-height .25s ease, padding-top .2s; }
+.faq-item.open .faq-a { max-height: 400px; padding-top: 12px; }
+.cta-block { max-width: var(--max); margin: 0 auto 64px; padding: 0 24px; }
+.cta-inner { background: var(--clay); border-radius: var(--r); padding: 40px 32px; text-align: center; }
+.cta-inner h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; color: white; margin-bottom: 10px; }
+.cta-inner p { color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.55; margin-bottom: 28px; max-width: 380px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; background: white; color: var(--clay-dark); font-size: 16px; font-weight: 500; padding: 15px 36px; border-radius: var(--r-sm); }
+.cta-btn:hover { text-decoration: none; opacity: .92; }
+.cta-sub { margin-top: 14px; font-size: 13px; color: rgba(255,255,255,.6); }
+footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 13px; color: var(--ink-muted); }
+footer a { color: var(--ink-muted); }
+@media (max-width: 520px) {
+  .install-grid { grid-template-columns: 1fr; }
+  .scenario-list { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Say <em>This</em> Instead</a>
+  <a href="/" class="nav-cta">Open the app</a>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">What is this?</div>
+  <h1>The words you wish you had <em>in the moment</em></h1>
+  <p>Say This Instead gives parents the exact script to use when toddlers hit, refuse bed, melt down, won't get dressed, or lose it at the park. No articles to read. Just the words.</p>
+  <a href="/" class="hero-btn">Try it free — no account needed</a>
+  <div class="hero-note">7 scenarios free &nbsp;·&nbsp; 30+ with subscription &nbsp;·&nbsp; works offline</div>
+</div>
+
+<div class="divider"><hr></div>
+
+<div class="section">
+  <div class="eyebrow">How it works</div>
+  <h2>Three taps to <em>calm</em></h2>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">1</div>
+      <div>
+        <h3>Pick the situation</h3>
+        <p>Tap whichever scenario matches what's happening right now — hitting, bedtime, meltdown, won't get dressed. Everything is one tap from the home screen.</p>
+      </div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">2</div>
+      <div>
+        <h3>Get the exact words</h3>
+        <p>You see a calm, ready-to-use script written for that specific situation. Not theory. Not a five-step framework. Just what to say, right now.</p>
+      </div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">3</div>
+      <div>
+        <h3>Follow the simple steps</h3>
+        <p>Each scenario includes what to do, what to avoid, what to say if they escalate, and a quick pro tip on why the approach actually works.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<div class="section">
+  <div class="eyebrow">What you actually get</div>
+  <h2>Scripts that work <em>in real life</em></h2>
+  <p>Here's an example — this one is for hitting.</p>
+  <div class="script-preview">
+    <div class="sp-label">🗣 Say this</div>
+    <div class="sp-quote">"I won't let you hit. Hitting hurts."</div>
+    <div class="sp-section-label">⏱ What to do</div>
+    <div class="sp-steps">
+      <div class="sp-step"><div class="sp-num">1</div><span>Block or gently hold their hands — physically prevent it without anger</span></div>
+      <div class="sp-step"><div class="sp-num">2</div><span>Stay calm and firm — say the script once, quietly</span></div>
+      <div class="sp-step"><div class="sp-num">3</div><span>Keep your body between them and others if needed</span></div>
+      <div class="sp-step"><div class="sp-num">4</div><span>Reconnect warmly once they're calm — no lingering lecture</span></div>
+    </div>
+    <div class="sp-section-label">⚠️ Avoid</div>
+    <div class="sp-avoid">
+      <div class="sp-avoid-item"><span>❌</span><span>Yelling or hitting back — it models the behaviour you're trying to stop</span></div>
+      <div class="sp-avoid-item"><span>❌</span><span>Long explanations in the heat of the moment — their brain isn't ready</span></div>
+      <div class="sp-avoid-item"><span>❌</span><span>Ignoring it completely — a clear, calm boundary matters every time</span></div>
+    </div>
+    <div class="sp-section-label">🔁 If they do it again</div>
+    <div class="sp-resist">"Hands are not for hitting. If you're angry, you can stomp your feet or say 'I'm mad'."</div>
+    <div class="sp-resist-note">→ Stay close, speak quietly, keep your body relaxed</div>
+    <div class="sp-section-label">💡 Pro tip</div>
+    <div class="sp-tip">"Stay physically calm and neutral — your reaction teaches what's acceptable."</div>
+  </div>
+  <p>Every scenario follows the same structure so it's fast to read even when you're in the middle of it. The script is short by design — toddlers can't process long explanations when they're dysregulated, and neither can you.</p>
+</div>
+
+<div class="divider"><hr></div>
+
+<div class="section">
+  <div class="eyebrow">What's covered</div>
+  <h2>30+ real toddler <em>situations</em></h2>
+  <p>Free scenarios are available immediately with no account. Premium unlocks everything.</p>
+  <div class="scenario-list">
+    <div class="s-pill free"><span class="s-icon">👕</span>Getting Dressed<span class="s-badge free">Free</span></div>
+    <div class="s-pill free"><span class="s-icon">✊</span>Hitting<span class="s-badge free">Free</span></div>
+    <div class="s-pill free"><span class="s-icon">😴</span>Bedtime Refusal<span class="s-badge free">Free</span></div>
+    <div class="s-pill free"><span class="s-icon">🚪</span>Leaving the House<span class="s-badge free">Free</span></div>
+    <div class="s-pill free"><span class="s-icon">🛝</span>Leaving the Park<span class="s-badge free">Free</span></div>
+    <div class="s-pill free"><span class="s-icon">🍽</span>Food Refusal<span class="s-badge free">Free</span></div>
+    <div class="s-pill free"><span class="s-icon">🗣</span>Won't Listen<span class="s-badge free">Free</span></div>
+    <div class="s-pill"><span class="s-icon">🌪️</span>Full Tantrum<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🛏</span>Won't Stay in Bed<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">😱</span>Screaming / Yelling<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">😢</span>Crying Over Small Things<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🤯</span>Overstimulation Meltdown<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🥺</span>Separation Anxiety<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🤗</span>Clinginess<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🧸</span>Throwing Objects<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🧗</span>Climbing Unsafe Things<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🏃</span>Running Away<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🤏</span>Snatching<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">📱</span>Screen Time Ending<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🚗</span>Getting Into Car Seat<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🛁</span>Bath Time Resistance<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🗯</span>Interrupting Adults<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🪥</span>Brushing Teeth<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">💊</span>Taking Medicine<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🤝</span>Sharing at Playdates<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">⏳</span>Waiting Their Turn<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🧹</span>Cleaning Up Toys<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🍪</span>Only Wants Snacks<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🪑</span>Refuses to Sit at Table<span class="s-badge lock">Premium</span></div>
+    <div class="s-pill"><span class="s-icon">🍽</span>Throwing Food<span class="s-badge lock">Premium</span></div>
+  </div>
+  <p style="font-size:14px;color:var(--ink-muted);">New scripts added regularly with a premium subscription.</p>
+</div>
+
+<div class="divider"><hr></div>
+
+<div class="section">
+  <div class="eyebrow">Add it to your home screen</div>
+  <h2>Works like an app — <em>installs like one too</em></h2>
+  <p>There's nothing to download from an app store. Add it directly to your home screen in about 10 seconds — then it works exactly like a native app, including fully offline.</p>
+  <div class="install-grid">
+    <div class="install-card">
+      <h3>🍎 iPhone / iPad</h3>
+      <ul class="install-steps">
+        <li><div class="i-num">1</div><span>Open <strong>say-this-instead.com</strong> in Safari</span></li>
+        <li><div class="i-num">2</div><span>Tap the <strong>Share button</strong> at the bottom of the screen</span></li>
+        <li><div class="i-num">3</div><span>Scroll down and tap <strong>Add to Home Screen</strong></span></li>
+        <li><div class="i-num">4</div><span>Tap <strong>Add</strong> — done</span></li>
+      </ul>
+      <p class="install-note">Must use Safari — Chrome on iPhone won't offer the install option.</p>
+    </div>
+    <div class="install-card">
+      <h3>🤖 Android</h3>
+      <ul class="install-steps">
+        <li><div class="i-num">1</div><span>Open <strong>say-this-instead.com</strong> in Chrome</span></li>
+        <li><div class="i-num">2</div><span>Tap the <strong>three-dot menu</strong> in the top right corner</span></li>
+        <li><div class="i-num">3</div><span>Tap <strong>Add to Home Screen</strong> or <strong>Install App</strong></span></li>
+        <li><div class="i-num">4</div><span>Tap <strong>Install</strong> — done</span></li>
+      </ul>
+      <p class="install-note">Chrome may prompt you automatically after a couple of visits.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<div class="section">
+  <div class="eyebrow">Questions</div>
+  <h2>Frequently asked</h2>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Is it free?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">7 scenarios are completely free — no account, no credit card, nothing. A subscription ($4.99/month or $29.99/year) unlocks all 30+ scripts, lets you save favourites for quick access, and includes new scripts regularly. There's a 7-day free trial.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">What age is it for?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">The scripts are written for parents of toddlers aged roughly 1 to 5 years old. Many of the approaches — calm boundaries, simple language, giving limited choices — also work well with older children, but the situations and language are aimed squarely at the toddler years.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Does it work offline?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">Yes — fully. Once you've visited the site, everything is cached on your device. Install it to your home screen and it works even in aeroplane mode. This was a deliberate decision: you need it in the moment, not when you have perfect wifi.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Who wrote the scripts?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">The scripts are grounded in evidence-based approaches to toddler behaviour — drawing on child development research, attachment theory, and positive discipline principles. They're written to be practical first: real words you can actually say under pressure, not textbook theory you have to translate in the moment.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Do I need to create an account?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">No account needed for free access — just open the app and use it. If you subscribe, you'll receive a unique access code by email which you enter once to unlock everything. No username, no password to forget.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">How do I cancel my subscription?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">You can cancel any time through Stripe, which handles all billing. No contract, no awkward process — cancel before your next billing date and you won't be charged again.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Will there be more scripts?<span class="faq-chevron">▾</span></div>
+    <div class="faq-a">Yes — new scenarios are added regularly for premium subscribers. If there's a situation you'd love a script for, get in touch and suggest it.</div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <div class="cta-inner">
+    <h2>Ready to try it?</h2>
+    <p>Start with 7 free scenarios — no account, no download, no faff. Just open it and use it.</p>
+    <a href="/" class="cta-btn">Open Say This Instead</a>
+    <div class="cta-sub">Free to start &nbsp;·&nbsp; Works offline &nbsp;·&nbsp; iOS &amp; Android</div>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/">Say This Instead</a> &nbsp;·&nbsp; Calm scripts for real toddler moments &nbsp;·&nbsp; <a href="/about/">How it works</a></p>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+  if(!isOpen) el.classList.add('open');
+}
+</script>
+</body>
+</html>
