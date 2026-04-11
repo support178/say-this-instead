@@ -1,4 +1,4 @@
-const CACHE = 'sti-v1';
+const CACHE = 'sti-v2';
 const FILES = ['/', '/index.html', '/scripts.json'];
 
 self.addEventListener('install', e => {
