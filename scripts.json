@@ -838,5 +838,37 @@
     "tip_try": [
       "Tidy-up time! Who can put the most things away in 60 seconds?"
     ]
+  },
+  {
+  "id": "tantrum",
+  "icon": "🌪️",
+  "free": false,
+  "title": "Full Tantrum",
+  "subtext": "For when they're completely overwhelmed and past the point of reason",
+  "script": "You're really upset right now. I'm right here. You're safe.",
+  "steps": [
+    "Stop talking — your words won't land while they're in it",
+    "Get physically close without crowding them",
+    "Keep your face calm and your body still",
+    "Wait for the peak to pass before saying anything else",
+    "Reconnect warmly once it's over — then move on, no debrief needed"
+  ],
+  "avoid": [
+    "Trying to reason or explain mid-tantrum",
+    "Raising your voice to be heard over theirs",
+    "Threatening consequences while they're dysregulated",
+    "Leaving them completely alone if they're very young"
+  ],
+  "resist": "I'm staying right here. I'm not going anywhere. This will pass.",
+  "resist_note": "Repeat quietly if needed — you are the anchor, not the audience",
+  "tip_headline": "Their brain is offline — wait for it to come back online",
+  "tip_instead_of": [
+    "Stop it right now!",
+    "You're being ridiculous — there's nothing to cry about!"
+  ],
+  "tip_try": [
+    "(silence + steady presence)",
+    "Then once calm: 'You okay? Want a hug?'"
+  ]
   }
 ]
