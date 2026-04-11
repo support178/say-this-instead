@@ -179,20 +179,36 @@
   "tip_instead_of": ["Repeating yourself louder"],
   "tip_try": ["Get close, say their name, then give the instruction"]
 },
+ [
   {
     "id": "wont-stay-in-bed",
     "icon": "🛏",
     "free": false,
-    "title": "Won’t Stay in Bed",
+    "title": "Won't Stay in Bed",
     "subtext": "For when they keep getting out of bed after lights out",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "It's time to stay in bed now. Every time you get up, I'm going to bring you straight back. I love you. Goodnight.",
+    "steps": [
+      "Say goodnight warmly but briefly — don't linger",
+      "The first time they get up, return them silently with minimal interaction",
+      "Each return after that: no eye contact, no talking, just guide them back",
+      "Be completely boring — no negotiation, no extra cuddles, no conversation",
+      "Stay consistent even if it takes many returns — it will reduce over nights"
+    ],
+    "avoid": [
+      "Engaging in conversation each time they come out",
+      "Allowing 'one more' of anything — drink, hug, question",
+      "Raising your voice or showing frustration",
+      "Giving up and letting them stay up — it resets the pattern"
+    ],
+    "resist": "Back to bed. I'll see you in the morning. I love you.",
+    "resist_note": "Say it once, quietly, then guide them back without further words",
+    "tip_headline": "Boring = faster",
+    "tip_instead_of": [
+      "Okay fine, just five more minutes in our bed"
+    ],
+    "tip_try": [
+      "Silent return, every time — consistency is the only thing that works"
+    ]
   },
   {
     "id": "throwing-food",
@@ -200,14 +216,29 @@
     "free": false,
     "title": "Throwing Food",
     "subtext": "For when food gets thrown instead of eaten",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "Food stays on the table. If you throw it again, I'm going to take your plate away and mealtime will be finished.",
+    "steps": [
+      "Stay calm — a big reaction makes throwing more interesting",
+      "State the boundary once, clearly",
+      "If they throw again, calmly remove the plate without drama",
+      "Don't replace the meal or offer alternatives",
+      "Try again at the next mealtime as if nothing happened"
+    ],
+    "avoid": [
+      "Laughing or reacting dramatically — it encourages repetition",
+      "Repeatedly warning without following through",
+      "Making them feel ashamed or bad about themselves",
+      "Turning mealtime into a long battle"
+    ],
+    "resist": "Plate's gone for now. We'll try again at dinner.",
+    "resist_note": "Remove calmly, clean up without fuss, move on with the day",
+    "tip_headline": "Reaction is the reward — remove it",
+    "tip_instead_of": [
+      "Stop that! Don't throw your food! How many times do I have to say it?"
+    ],
+    "tip_try": [
+      "Food stays on the table. (remove plate if it happens) Done for now."
+    ]
   },
   {
     "id": "only-wants-snacks",
@@ -215,29 +246,59 @@
     "free": false,
     "title": "Only Wants Snacks",
     "subtext": "For when they refuse meals but keep asking for snacks",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "Snacks are finished for now. The next time we eat is dinner. I know that's hard to wait for.",
+    "steps": [
+      "Set clear snack times and stick to them",
+      "Serve meals first — no snacks within 1.5 hours of a meal",
+      "Don't negotiate or explain at length when they ask",
+      "Acknowledge the frustration without giving in",
+      "Trust that a hungry child will eat at the next meal"
+    ],
+    "avoid": [
+      "Offering snacks to avoid a meltdown right before a meal",
+      "Caving because they 'didn't eat enough' at the last meal",
+      "Making separate snack meals as a replacement for dinner",
+      "Turning it into a long conversation about nutrition"
+    ],
+    "resist": "I hear you — you're hungry. Dinner is in 30 minutes and that's when we eat next.",
+    "resist_note": "Offer water, then divert attention to an activity",
+    "tip_headline": "Hunger is not an emergency — it's a signal",
+    "tip_instead_of": [
+      "Fine, just a few crackers to tide you over"
+    ],
+    "tip_try": [
+      "Dinner is at 5:30. That's when the kitchen opens next."
+    ]
   },
   {
     "id": "refuses-to-sit",
     "icon": "🪑",
     "free": false,
     "title": "Refuses to Sit at Table",
-    "subtext": "For when they won’t stay seated during meals",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "subtext": "For when they won't stay seated during meals",
+    "script": "When you leave the table, mealtime is finished. Do you want to stay and keep eating, or are you done?",
+    "steps": [
+      "Set the expectation before the meal, not during it",
+      "Keep mealtimes short — toddlers don't need to sit for 30 minutes",
+      "If they leave, let them — don't chase or coax them back",
+      "No more food until the next meal if they choose to leave",
+      "Make sitting together pleasant so they want to stay"
+    ],
+    "avoid": [
+      "Chasing them around with food",
+      "Letting them graze standing up after leaving the table",
+      "Extending mealtime trying to get them to eat more",
+      "Forcing them back into the seat physically"
+    ],
+    "resist": "You've left the table so mealtime is done. That's okay — we'll eat again at snack time.",
+    "resist_note": "Follow through calmly — the boundary only works if it's real",
+    "tip_headline": "Short meals with clear endings beat long battles",
+    "tip_instead_of": [
+      "Come back! You haven't eaten enough! Just sit down for two more minutes!"
+    ],
+    "tip_try": [
+      "We sit at the table while we eat. Ready to come back, or are you all done?"
+    ]
   },
   {
     "id": "screaming",
@@ -245,14 +306,29 @@
     "free": false,
     "title": "Screaming / Yelling",
     "subtext": "For when they shout loudly instead of communicating",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "That's a really loud voice. I can hear you want something. Can you show me with your quiet voice or your hands?",
+    "steps": [
+      "Don't match their volume — stay noticeably quieter than them",
+      "Acknowledge that they want something without giving in to the scream",
+      "Ask for a quieter version of the same request",
+      "When they use a quieter voice, respond immediately and warmly",
+      "Check if they're overtired or overwhelmed — screaming is often a signal"
+    ],
+    "avoid": [
+      "Screaming back or matching their intensity",
+      "Giving them what they want while they're screaming",
+      "Shushing aggressively — it often escalates",
+      "Ignoring completely if they're genuinely distressed"
+    ],
+    "resist": "I'm going to wait until your voice is quieter. I'm right here.",
+    "resist_note": "Pause, stay calm, and wait — respond the moment the volume drops",
+    "tip_headline": "Your quiet voice is louder than theirs",
+    "tip_instead_of": [
+      "Stop screaming! USE YOUR WORDS!"
+    ],
+    "tip_try": [
+      "Ooh, that's a big voice. Can I hear your small voice? What do you need?"
+    ]
   },
   {
     "id": "crying-over-small-things",
@@ -260,14 +336,29 @@
     "free": false,
     "title": "Crying Over Small Things",
     "subtext": "For when minor issues lead to big tears",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "I can see that really upset you. It's okay to feel sad about that. I'm here.",
+    "steps": [
+      "Resist the urge to minimise it — 'it's not a big deal' shuts them down",
+      "Name the feeling without judgement",
+      "Sit with them briefly rather than trying to fix it fast",
+      "Let the feeling pass naturally — don't prolong it with lots of attention",
+      "Move on warmly once they've settled"
+    ],
+    "avoid": [
+      "\"You're fine\" or \"Stop crying\" or \"That's nothing to cry about\"",
+      "Laughing at the reason they're upset",
+      "Over-comforting in a way that prolongs the crying",
+      "Problem-solving before they feel heard"
+    ],
+    "resist": "You really wanted that to go differently. That's okay. Take your time.",
+    "resist_note": "Stay nearby without too much fuss — presence without prolonging",
+    "tip_headline": "To them, it IS a big deal — meet them there first",
+    "tip_instead_of": [
+      "Seriously? You're crying over that? It's just a cracker."
+    ],
+    "tip_try": [
+      "Oh, that was really disappointing wasn't it. I get it. (sit quietly)"
+    ]
   },
   {
     "id": "overstimulation-meltdown",
@@ -275,14 +366,29 @@
     "free": false,
     "title": "Overstimulation Meltdown",
     "subtext": "For when too much noise, activity, or change leads to overwhelm",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "There's a lot going on right now. Let's find a quiet spot together.",
+    "steps": [
+      "Remove them from the environment if possible — even briefly",
+      "Reduce input: lower noise, dim lights, slow your movements",
+      "Say very little — your calm presence is enough",
+      "Don't try to talk them through it while it's happening",
+      "Give them time to regulate before returning to the activity"
+    ],
+    "avoid": [
+      "Telling them to calm down or pull themselves together",
+      "Introducing more stimulation (screens, toys, noise) to distract",
+      "Staying in the overwhelming environment and expecting them to cope",
+      "Rushing the recovery — they need as long as they need"
+    ],
+    "resist": "We're going to sit here quietly for a bit. No rush.",
+    "resist_note": "Stay close, say little, breathe slowly — your nervous system regulates theirs",
+    "tip_headline": "Prevention beats recovery — watch for the build-up",
+    "tip_instead_of": [
+      "You were fine five minutes ago! What happened?"
+    ],
+    "tip_try": [
+      "(move to quieter space, sit down, say nothing — just be there)"
+    ]
   },
   {
     "id": "separation-anxiety",
@@ -290,29 +396,59 @@
     "free": false,
     "title": "Separation Anxiety",
     "subtext": "For when they struggle to be apart from you",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "I'm going now and I will be back at [specific time]. I love you. Bye bye.",
+    "steps": [
+      "Give a specific, concrete return time they can understand",
+      "Keep the goodbye short and confident — don't linger",
+      "Don't sneak out — it damages trust and worsens anxiety long term",
+      "Say goodbye once, warmly, and then go",
+      "Trust the carer — most children settle within minutes of you leaving"
+    ],
+    "avoid": [
+      "Sneaking out to avoid the tears",
+      "Returning because they're upset — it reinforces that crying brings you back",
+      "Long drawn-out goodbyes that escalate the anxiety",
+      "Saying \"I'll only be a minute\" if that's not true"
+    ],
+    "resist": "I know it's hard. I love you. I'll be back after your nap.",
+    "resist_note": "Say it once, mean it, then leave — hesitation makes it harder",
+    "tip_headline": "Confident goodbyes create secure children",
+    "tip_instead_of": [
+      "Are you sure you'll be okay? Maybe I should stay a bit longer..."
+    ],
+    "tip_try": [
+      "Big hug. I love you. Back at 3 o'clock. Bye! (then go)"
+    ]
   },
   {
     "id": "clinginess",
     "icon": "🤗",
     "free": false,
     "title": "Clinginess",
-    "subtext": "For when they won’t let you out of their sight",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "subtext": "For when they won't let you out of their sight",
+    "script": "I'm just going to [specific place] to do [specific thing]. I'll be back in two minutes. You can come find me.",
+    "steps": [
+      "Always tell them where you're going — never just disappear",
+      "Give a concrete, short timeframe",
+      "Follow through and return when you said you would",
+      "Build trust through small, successful separations",
+      "Make sure their connection cup is full — more quality time often reduces clinginess"
+    ],
+    "avoid": [
+      "Sneaking away when they're distracted",
+      "Getting frustrated or calling them 'too clingy'",
+      "Pushing them away when they reach for you",
+      "Ignoring the underlying need for connection"
+    ],
+    "resist": "I hear you — you want to be close. I'm coming right back. Two minutes.",
+    "resist_note": "Return when you said you would — every kept promise builds independence",
+    "tip_headline": "More connection now = more independence later",
+    "tip_instead_of": [
+      "Stop following me everywhere! I just need five minutes to myself!"
+    ],
+    "tip_try": [
+      "I'm going to the kitchen. I'll be back before you count to ten."
+    ]
   },
   {
     "id": "throwing-objects",
@@ -320,14 +456,29 @@
     "free": false,
     "title": "Throwing Objects",
     "subtext": "For when toys or items are thrown during play or frustration",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "Toys aren't for throwing. If you throw it again, I'm going to put it away for the rest of the day.",
+    "steps": [
+      "State the boundary calmly and once",
+      "If they throw again, remove the object immediately without drama",
+      "Don't return the object for the rest of that play session",
+      "Offer a safe alternative if they need to throw: a soft ball outside",
+      "Reconnect once they're calm — no lingering punishment"
+    ],
+    "avoid": [
+      "Throwing things back to show them how it feels",
+      "Warning repeatedly without following through",
+      "Long lectures about safety while they're dysregulated",
+      "Making them feel like a bad person"
+    ],
+    "resist": "That toy is done for today. We can try again tomorrow.",
+    "resist_note": "Remove it calmly and redirect — don't extend the moment",
+    "tip_headline": "Give them somewhere safe to throw — outside with a ball",
+    "tip_instead_of": [
+      "How many times do I have to tell you not to throw things?!"
+    ],
+    "tip_try": [
+      "We don't throw toys. (remove it) Want to throw the ball outside instead?"
+    ]
   },
   {
     "id": "climbing-unsafe",
@@ -335,14 +486,29 @@
     "free": false,
     "title": "Climbing Unsafe Things",
     "subtext": "For when they climb furniture or unsafe spaces",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "That's not safe to climb. I'm going to help your body get down. You can climb at the park.",
+    "steps": [
+      "Move to them calmly — don't shout from across the room",
+      "Help them down physically if needed, without anger",
+      "Name a safe alternative immediately",
+      "Childproof where possible — remove the temptation",
+      "Get them to a place where climbing IS allowed regularly"
+    ],
+    "avoid": [
+      "Shouting from a distance — it startles and can cause falls",
+      "Shaming them for their natural impulse to climb",
+      "Removing all climbing opportunities — they need to climb",
+      "Long explanations while they're mid-climb"
+    ],
+    "resist": "I'm going to help you down now. Bodies aren't safe up there.",
+    "resist_note": "Guide them down firmly but gently — stay calm so they do too",
+    "tip_headline": "Climbing is healthy — redirect to where it's safe",
+    "tip_instead_of": [
+      "GET DOWN FROM THERE RIGHT NOW! You're going to hurt yourself!"
+    ],
+    "tip_try": [
+      "Down we come. (help them) Let's find somewhere safe to climb."
+    ]
   },
   {
     "id": "running-away",
@@ -350,14 +516,29 @@
     "free": false,
     "title": "Running Away",
     "subtext": "For when they bolt in public or unsafe areas",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "Stop. Hold my hand. It's not safe to run here.",
+    "steps": [
+      "Use a firm, calm voice — not panicked, not angry",
+      "Catch up and hold their hand or put them in the pram/carrier",
+      "Keep the explanation brief — their brain can't process lectures mid-bolt",
+      "Praise them clearly when they do walk well",
+      "Use reins or a wrist strap in high-risk environments without guilt"
+    ],
+    "avoid": [
+      "Chasing them while laughing — it becomes a game",
+      "Shouting from a distance and expecting compliance",
+      "Extended explanations about danger while still outside",
+      "Shaming them in front of others"
+    ],
+    "resist": "Hand please. We hold hands in the carpark. That's the rule.",
+    "resist_note": "Take their hand firmly — this is a safety boundary, not a negotiation",
+    "tip_headline": "Use reins without guilt — safety comes first",
+    "tip_instead_of": [
+      "Come back here! Stop running! Do you have any idea how dangerous that is?!"
+    ],
+    "tip_try": [
+      "Stop. (catch up) Hand. Thank you. We hold hands here."
+    ]
   },
   {
     "id": "snatching",
@@ -365,29 +546,59 @@
     "free": false,
     "title": "Snatching",
     "subtext": "For when they grab toys or items from others",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "You snatched that from her. Let's give it back and ask properly. Can you say — can I have a turn?",
+    "steps": [
+      "Step in quickly but calmly",
+      "Return the item to the other child first",
+      "Coach them to ask instead — keep it simple",
+      "Stay close to support rather than walking away",
+      "Praise any moment of waiting or asking nicely"
+    ],
+    "avoid": [
+      "Forcing a hug or sorry that isn't genuine",
+      "Long lectures about sharing while they're frustrated",
+      "Dismissing the other child's upset",
+      "Letting it go to keep the peace — it repeats"
+    ],
+    "resist": "We're going to give that back and then ask. I'll help you.",
+    "resist_note": "Coach the words — 'can I have a turn?' — then wait together",
+    "tip_headline": "Coach the ask — don't just correct the snatch",
+    "tip_instead_of": [
+      "That was so naughty! Say sorry RIGHT now!"
+    ],
+    "tip_try": [
+      "Let's give that back. Now ask: can I have a turn when you're done?"
+    ]
   },
   {
     "id": "screen-time",
     "icon": "📱",
     "free": false,
-    "title": "Turning Off Screen Time",
-    "subtext": "For when ending screens leads to resistance or meltdown",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "title": "Screen Time Ending",
+    "subtext": "For when turning off the TV or tablet triggers a meltdown",
+    "script": "The show is going to finish in two minutes. When it's done, screens are done for now. What do you want to do after?",
+    "steps": [
+      "Give a warning before the end — not during a critical moment",
+      "Use a timer they can see if possible",
+      "Turn it off yourself — don't ask them to do it",
+      "Have the next activity ready to move straight into",
+      "Stay neutral — no guilt, no lectures about screens"
+    ],
+    "avoid": [
+      "Saying 'one more episode' repeatedly",
+      "Turning it off mid-scene with no warning",
+      "Getting into a debate about screen time limits",
+      "Using screens as the only wind-down strategy"
+    ],
+    "resist": "I know you want to keep watching. Screens are done for now. Let's find something else.",
+    "resist_note": "Don't re-open the negotiation — the boundary is the boundary",
+    "tip_headline": "Transition activities beat cold turkey every time",
+    "tip_instead_of": [
+      "Turn it off now! I said NOW!"
+    ],
+    "tip_try": [
+      "After this episode we're going to do (specific thing) — ready?"
+    ]
   },
   {
     "id": "car-seat",
@@ -395,14 +606,29 @@
     "free": false,
     "title": "Getting Into Car Seat",
     "subtext": "For when they resist being strapped in",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "It's time to get in your seat. You can hold your toy or choose a song — but we need you buckled first.",
+    "steps": [
+      "Give a small choice within the non-negotiable",
+      "Stay calm — urgency transfers to them and escalates resistance",
+      "If needed, guide them in physically without anger",
+      "Buckle efficiently once they're in — don't leave it half done",
+      "Acknowledge once you're moving: 'Thank you for getting in'"
+    ],
+    "avoid": [
+      "Bribing with screens every single time — it becomes the expectation",
+      "Forcing them in while you're visibly frustrated",
+      "Letting them ride unbuckled — this is a safety non-negotiable",
+      "Turning the car park into a long negotiation"
+    ],
+    "resist": "I'm going to help your body into the seat now. Here we go.",
+    "resist_note": "Announce it, then do it calmly — no asking, just guiding",
+    "tip_headline": "Car seat is never optional — your calm makes it faster",
+    "tip_instead_of": [
+      "Get in the seat RIGHT NOW or we're not going anywhere!"
+    ],
+    "tip_try": [
+      "Hop in and you can pick the music. In you go."
+    ]
   },
   {
     "id": "bath-time",
@@ -410,14 +636,29 @@
     "free": false,
     "title": "Bath Time Resistance",
     "subtext": "For when they refuse or resist getting into the bath",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "Bath time now. Do you want to walk to the bathroom or shall I carry you like a rocket?",
+    "steps": [
+      "Give a 5-minute warning before bath time starts",
+      "Offer a playful choice about how they get there",
+      "Make the bath itself appealing — toys, bubbles, glow sticks",
+      "Keep bath time consistent so it's predictable",
+      "Getting out can be just as tricky — warn before that too"
+    ],
+    "avoid": [
+      "Skipping baths repeatedly because of resistance — it gets harder",
+      "Making it a power struggle by demanding compliance",
+      "Threatening consequences for not getting in",
+      "Rushing them — bath time is often also wind-down time"
+    ],
+    "resist": "In the bath we go. I'll help your body. There we are.",
+    "resist_note": "Guide them in warmly — once they're in, most children relax quickly",
+    "tip_headline": "The transition is the hard part — make it playful",
+    "tip_instead_of": [
+      "Get in the bath NOW. I'm not asking again."
+    ],
+    "tip_try": [
+      "Bath time! Rocket ship or piggyback to the bathroom?"
+    ]
   },
   {
     "id": "interrupting",
@@ -425,14 +666,29 @@
     "free": false,
     "title": "Interrupting Adults",
     "subtext": "For when they constantly interrupt conversations",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "I can see you need me. Put your hand on my arm and I'll know you're waiting. I'll come to you as soon as I can.",
+    "steps": [
+      "Teach the hand-on-arm signal before you need it, not mid-conversation",
+      "Acknowledge their hand quickly so they know it works",
+      "Finish your thought, then turn to them promptly",
+      "Thank them for waiting — even imperfect waiting",
+      "Keep adult conversations short when toddlers are nearby"
+    ],
+    "avoid": [
+      "Ignoring them completely — they'll escalate until heard",
+      "Snapping at them for interrupting without teaching an alternative",
+      "Expecting long waits — their impulse control is genuinely limited",
+      "Inconsistency — letting it go sometimes and correcting other times"
+    ],
+    "resist": "I see your hand. I'm coming in just a moment. Thank you for waiting.",
+    "resist_note": "Acknowledge the signal quickly or they'll lose trust in it",
+    "tip_headline": "Teach the signal before the situation — not during it",
+    "tip_instead_of": [
+      "Can't you see I'm talking?! Just wait!"
+    ],
+    "tip_try": [
+      "Put your hand here (on your arm) and I'll know you need me."
+    ]
   },
   {
     "id": "brushing-teeth",
@@ -440,14 +696,29 @@
     "free": false,
     "title": "Brushing Teeth",
     "subtext": "For when they refuse or resist tooth brushing",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "It's tooth brushing time. Do you want to do it first or shall I do it first?",
+    "steps": [
+      "Let them brush first — then you do the 'grown-up' brush after",
+      "Make it quick — 2 minutes feels long, use a timer or song",
+      "Let them choose their toothbrush and toothpaste flavour",
+      "Stay consistent — every night, no exceptions",
+      "If they clamp shut, stay calm and try again — don't skip it"
+    ],
+    "avoid": [
+      "Skipping it to avoid the battle — it becomes harder each time",
+      "Pinning them down without warning",
+      "Turning it into a lengthy negotiation",
+      "Bribing with sweet things — counterproductive"
+    ],
+    "resist": "I'm going to brush your teeth now. Open wide — I'll be quick.",
+    "resist_note": "Be efficient — the faster it's done the less resistance builds",
+    "tip_headline": "Let them go first — then you finish the job",
+    "tip_instead_of": [
+      "Open your mouth RIGHT NOW or no story tonight!"
+    ],
+    "tip_try": [
+      "Your turn first! (let them brush) Now my turn to get the sneaky spots."
+    ]
   },
   {
     "id": "taking-medicine",
@@ -455,14 +726,29 @@
     "free": false,
     "title": "Taking Medicine",
     "subtext": "For when they refuse medicine or spit it out",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "This medicine is going to help your body feel better. You can have it from the spoon or the syringe — you pick.",
+    "steps": [
+      "Give a choice of how, not whether",
+      "Mix with a small amount of food if safe to do so — check with your pharmacist",
+      "Follow immediately with something they like the taste of",
+      "Stay matter-of-fact — big reactions make it a bigger deal",
+      "Praise them after, even if it was a struggle"
+    ],
+    "avoid": [
+      "Hiding medicine without their knowledge if avoidable — trust matters",
+      "Making it a huge drama that primes resistance next time",
+      "Giving up if they spit it — note how much and re-dose appropriately",
+      "Forcing it in a way that makes them gag or panic"
+    ],
+    "resist": "I know you don't like it. It's still going to happen. Quick as we can.",
+    "resist_note": "Stay calm and efficient — your confidence helps them comply",
+    "tip_headline": "Choice of how, never choice of whether",
+    "tip_instead_of": [
+      "Just take it! It's not that bad! Stop being so dramatic!"
+    ],
+    "tip_try": [
+      "Spoon or syringe? Quick or slow? You choose."
+    ]
   },
   {
     "id": "sharing-playdates",
@@ -470,14 +756,29 @@
     "free": false,
     "title": "Sharing at Playdates",
     "subtext": "For when they struggle to share with other children",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "Before your friend arrives, let's put away the toys that are really special to you. Everything else is for sharing today.",
+    "steps": [
+      "Do this before the playdate — not during the conflict",
+      "Let them choose 2-3 toys to put away safely",
+      "Everything else is fair game for the visit",
+      "Stay nearby to coach turn-taking rather than forcing sharing",
+      "Keep playdates short — they go better when everyone's still fresh"
+    ],
+    "avoid": [
+      "Forcing them to share toys that are genuinely precious to them",
+      "Shaming them in front of the other child or parent",
+      "Expecting toddlers to naturally share — it's a skill that develops over time",
+      "Staying out of it entirely and hoping for the best"
+    ],
+    "resist": "Let's take turns. You have it for two minutes, then it's her turn.",
+    "resist_note": "Use a timer so the turn is concrete and predictable for both children",
+    "tip_headline": "Pre-empt conflict by letting them protect what matters most",
+    "tip_instead_of": [
+      "You HAVE to share! Don't be so selfish!"
+    ],
+    "tip_try": [
+      "Pick your special toys to put away. Everything else we share today."
+    ]
   },
   {
     "id": "waiting-turn",
@@ -485,14 +786,29 @@
     "free": false,
     "title": "Waiting Their Turn",
     "subtext": "For when they struggle with patience and waiting",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "It's not your turn yet. You're next. Let's count how many more sleeps — or let's watch her finish.",
+    "steps": [
+      "Make the wait visible and concrete — a timer, counting, or watching",
+      "Stay close during the wait — don't walk away",
+      "Narrate the other person's turn: 'She's nearly done, then it's you'",
+      "Acknowledge how hard waiting is — it genuinely is hard for them",
+      "Celebrate when they manage it, even imperfectly"
+    ],
+    "avoid": [
+      "Expecting them to wait silently without support",
+      "Punishing them for struggling — impulse control is still developing",
+      "Letting them skip the queue to keep the peace",
+      "Minimising how hard it feels"
+    ],
+    "resist": "Still waiting. Nearly there. You're doing really well.",
+    "resist_note": "Narrate the progress — give them something to hold onto",
+    "tip_headline": "Make the wait visible — abstract waiting is hardest",
+    "tip_instead_of": [
+      "Just WAIT. It's not your turn yet. Stop asking!"
+    ],
+    "tip_try": [
+      "You're next. Watch — when she gets off, you jump on."
+    ]
   },
   {
     "id": "cleaning-up-toys",
@@ -500,13 +816,28 @@
     "free": false,
     "title": "Cleaning Up Toys",
     "subtext": "For when they refuse to tidy up after playing",
-    "script": "",
-    "steps": [],
-    "avoid": [],
-    "resist": "",
-    "resist_note": "",
-    "tip_headline": "",
-    "tip_instead_of": [],
-    "tip_try": []
+    "script": "It's tidy-up time. Let's see how fast we can do it together. Ready? Go!",
+    "steps": [
+      "Make it a game or a race — toddlers respond to energy and fun",
+      "Do it with them, not just directing from afar",
+      "Use a consistent tidy-up song or signal",
+      "Keep it short — 5 minutes maximum at this age",
+      "Praise the effort, not just the result"
+    ],
+    "avoid": [
+      "Expecting them to do it all themselves",
+      "Threatening to throw toys away in anger",
+      "Making tidy-up such a battle that play becomes stressful",
+      "Doing it all yourself every time — they won't learn the habit"
+    ],
+    "resist": "I'll do the blocks, you do the cars. Let's go — together.",
+    "resist_note": "Jump in alongside them — your participation makes them more likely to join",
+    "tip_headline": "Together is always easier than directive",
+    "tip_instead_of": [
+      "Pick all of this up RIGHT NOW before I throw it in the bin!"
+    ],
+    "tip_try": [
+      "Tidy-up time! Who can put the most things away in 60 seconds?"
+    ]
   }
 ]
