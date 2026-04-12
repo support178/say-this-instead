@@ -535,13 +535,14 @@ function openScript(s) {
   document.getElementById('s-tip-yes').innerHTML = s.tip_try.map(t =>
     `<div class="tip-item tip-yes">${t}</div>`).join('');
 
-  // Save button
+// Save button
   updateSaveBtn();
 
-track('scenario_viewed', { scenario_id: s.id, scenario_title: s.title, is_free: s.free });
+  track('scenario_viewed', { scenario_id: s.id, scenario_title: s.title, is_free: s.free });
   showScreen('script-screen');
   document.getElementById('bottom-nav').style.display = 'none';
   document.getElementById('script-screen').scrollTop = 0;
+}
 
 function updateSaveBtn() {
   const saved = state.savedIds.includes(state.current?.id);
