@@ -187,17 +187,17 @@
     "subtext": "For when they keep getting out of bed after lights out",
     "script": "It's time to stay in bed now. Every time you get up, I'm going to bring you straight back. I love you. Goodnight.",
     "steps": [
-      "Say goodnight warmly but briefly — don't linger",
+      "Say goodnight warmly but briefly. Don't linger",
       "The first time they get up, return them silently with minimal interaction",
       "Each return after that: no eye contact, no talking, just guide them back",
-      "Be completely boring — no negotiation, no extra cuddles, no conversation",
-      "Stay consistent even if it takes many returns — it will reduce over nights"
+      "Be completely boring. No negotiation, no extra cuddles, no conversation",
+      "Stay consistent even if it takes many returns. It will reduce over time"
     ],
     "avoid": [
       "Engaging in conversation each time they come out",
-      "Allowing 'one more' of anything — drink, hug, question",
+      "Allowing 'one more' of anything: drink, hug, question",
       "Raising your voice or showing frustration",
-      "Giving up and letting them stay up — it resets the pattern"
+      "Giving up and letting them stay up, it resets the pattern"
     ],
     "resist": "Back to bed. I'll see you in the morning. I love you.",
     "resist_note": "Say it once, quietly, then guide them back without further words",
@@ -206,7 +206,7 @@
       "Okay fine, just five more minutes in our bed"
     ],
     "tip_try": [
-      "Silent return, every time — consistency is the only thing that works"
+      "Silent return, every time. Consistency is the only thing that works"
     ]
   },
   {
@@ -217,21 +217,21 @@
     "subtext": "For when food gets thrown instead of eaten",
     "script": "Food stays on the table. If you throw it again, I'm going to take your plate away and mealtime will be finished.",
     "steps": [
-      "Stay calm — a big reaction makes throwing more interesting",
+      "Stay calm. A big reaction makes throwing more interesting",
       "State the boundary once, clearly",
       "If they throw again, calmly remove the plate without drama",
       "Don't replace the meal or offer alternatives",
       "Try again at the next mealtime as if nothing happened"
     ],
     "avoid": [
-      "Laughing or reacting dramatically — it encourages repetition",
+      "Laughing or reacting dramatically. It encourages repetition",
       "Repeatedly warning without following through",
       "Making them feel ashamed or bad about themselves",
       "Turning mealtime into a long battle"
     ],
     "resist": "Plate's gone for now. We'll try again at dinner.",
     "resist_note": "Remove calmly, clean up without fuss, move on with the day",
-    "tip_headline": "Reaction is the reward — remove it",
+    "tip_headline": "Reaction is the reward, remove it",
     "tip_instead_of": [
       "Stop that! Don't throw your food! How many times do I have to say it?"
     ],
@@ -248,7 +248,7 @@
     "script": "Snacks are finished for now. The next time we eat is dinner. I know that's hard to wait for.",
     "steps": [
       "Set clear snack times and stick to them",
-      "Serve meals first — no snacks within 1.5 hours of a meal",
+      "Serve meals first. No snacks within 1.5 hours of a meal",
       "Don't negotiate or explain at length when they ask",
       "Acknowledge the frustration without giving in",
       "Trust that a hungry child will eat at the next meal"
@@ -259,14 +259,14 @@
       "Making separate snack meals as a replacement for dinner",
       "Turning it into a long conversation about nutrition"
     ],
-    "resist": "I hear you — you're hungry. Dinner is in 30 minutes and that's when we eat next.",
+    "resist": "I hear you, you're hungry. Dinner is in 30 minutes and that's when we eat next.",
     "resist_note": "Offer water, then divert attention to an activity",
-    "tip_headline": "Hunger is not an emergency — it's a signal",
+    "tip_headline": "Hunger is not an emergency, it's a signal",
     "tip_instead_of": [
-      "Fine, just a few crackers to tide you over"
+      "\"Fine, just a few crackers to tide you over\""
     ],
     "tip_try": [
-      "Dinner is at 5:30. That's when the kitchen opens next."
+      "\"Dinner is at 5:30. That's when the kitchen opens next.\""
     ]
   },
   {
