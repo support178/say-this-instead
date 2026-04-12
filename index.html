@@ -423,7 +423,7 @@ let state = {
 // ── LOAD SCRIPTS ──
 // Loads from scripts.json sitting alongside this HTML file.
 // To add a new scenario: edit scripts.json and redeploy.
-async function pts() {
+async function loadScripts() {
   try {
     const res = await fetch('/scripts.json');
     scenarios = await res.json();
