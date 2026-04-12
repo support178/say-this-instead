@@ -403,7 +403,7 @@ body { min-height: 100%; background: var(--cream); font-family: 'DM Sans', sans-
     <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
     Account
   </div>
-  <div class="nav-item" onclick="window.open('/how-it-works/','_blank')">
+  <div class="nav-item" onclick="track('how_it_works_opened'); window.open('/how-it-works/','_blank')">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
     Info
   </div>
@@ -419,11 +419,11 @@ let state = {
   current: null,
   selectedPlan: 'monthly'
 };
-
+  
 // ── LOAD SCRIPTS ──
 // Loads from scripts.json sitting alongside this HTML file.
 // To add a new scenario: edit scripts.json and redeploy.
-async function loadScripts() {
+async function pts() {
   try {
     const res = await fetch('scripts.json');
     scenarios = await res.json();
@@ -538,6 +538,7 @@ function openScript(s) {
   // Save button
   updateSaveBtn();
 
+track('scenario_viewed', { scenario_id: s.id, scenario_title: s.title, is_free: s.free });
   showScreen('script-screen');
   document.getElementById('bottom-nav').style.display = 'none';
   document.getElementById('script-screen').scrollTop = 0;
@@ -553,14 +554,17 @@ function toggleSave() {
   const id = state.current.id;
   const idx = state.savedIds.indexOf(id);
   if(idx > -1) { state.savedIds.splice(idx,1); showToast('Removed'); }
-  else { state.savedIds.push(id); showToast('Saved!'); }
+  else { state.savedIds.push(id); track('scenario_saved', { scenario_id: id }); showToast('Saved!'); }
   localStorage.setItem('sti_saved', JSON.stringify(state.savedIds));
   updateSaveBtn();
 }
 
 function copyScript() {
   const text = state.current.script;
-  navigator.clipboard?.writeText(text).then(() => showToast('Copied!'));
+  navigator.clipboard?.writeText(text).then(() => {
+    track('script_copied', { scenario_id: state.current.id, scenario_title: state.current.title });
+    showToast('Copied!');
+  });
 }
 
 // ── SEARCH ──
@@ -587,11 +591,6 @@ function showTab(id, el) {
   document.getElementById('bottom-nav').style.display = 'flex';
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   el.classList.add('active');
-}
-
-function showPaywall() {
-  showScreen('paywall');
-  document.getElementById('bottom-nav').style.display = 'none';
 }
 
 function showScreen(id) {
@@ -633,6 +632,7 @@ function showActivate() {
 }
 
 function showPaywall() {
+  track('paywall_viewed');
   showScreen('paywall');
   document.getElementById('bottom-nav').style.display = 'none';
 }
@@ -652,6 +652,7 @@ async function validateUUID() {
     return;
   }
 
+ track('activate_attempted');
   btn.textContent = 'Checking...';
   btn.disabled = true;
 
@@ -670,10 +671,12 @@ async function validateUUID() {
       state.isPremium = true;
       updatePlanUI();
       renderHome(scenarios);
+    track('activate_success');
       showScreen('success');
       document.getElementById('bottom-nav').style.display = 'none';
     } else {
       document.getElementById('uuid-input').classList.add('error');
+      track('activate_failed', { reason: data.message || 'invalid_code' });
       errEl.textContent = data.message || 'Code not recognised. Check your email and try again.';
       btn.textContent = 'Unlock access';
       btn.disabled = false;
@@ -725,6 +728,13 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2000);
 }
 
+// ── ANALYTICS ──
+function track(event, params = {}) {
+  if(typeof gtag === 'function') {
+    gtag('event', event, params);
+  }
+}
+  
 loadScripts();
 </script>
 </body>
