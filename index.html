@@ -623,6 +623,7 @@ function selectPlan(el, plan) {
 }
 
 function goToStripe() {
+  track('stripe_link_clicked', { plan: state.selectedPlan });
   window.open(STRIPE_LINKS[state.selectedPlan], '_blank');
 }
 
